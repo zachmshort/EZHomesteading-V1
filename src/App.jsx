@@ -5,7 +5,7 @@ import ModelViewer from './components/ModelViewer';
 function App() {
   return (
     <>
-      <ModelViewer scale={40} modelPath={"/3d/garden.glb"} />
+      <ModelViewer modelPath={"/3d/garden.glb"} />
     </>
   )
 }

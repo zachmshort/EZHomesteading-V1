@@ -3,27 +3,15 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import GltfModel from "./GltfModel";
 
-const ModelViewer = ({ modelPath, scale = 100, position = [0, 0, 0], cameraPosition = [0, 0, 1000] }) => {
+const ModelViewer = ({ modelPath, scale = 1, position = [0, 0, 0]}) => {
   return (
-    <Canvas style={{ width: '100vw', height: '100vh' }}>
-      <ambientLight intensity={1} />
-      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-      <pointLight position={[-10, -10, -10]} />
+    <Canvas style={{ width: '100vw', height: '100vh' }} camera={{ position: [-8, 8, 8], rotation: [-0.3, 0, 0] }}>
+      <pointLight intensity={50} position={[6,4,-7]} />
+      <pointLight intensity={50} position={[-1, 5, 5]}/>
+      <ambientLight intensity={.01}/>
       <Suspense fallback={null}>
         <GltfModel modelPath={modelPath} scale={scale} position={position} />
-        <OrbitControls 
-        enableZoom={true}
-        enableRotate={true}
-        enablePan={true}
-        enableDamping={true}
-        dampingFactor={0.1}
-        minDistance={1}
-        maxDistance={1000}
-        minPolarAngle={0}
-        maxPolarAngle={Math.PI / 2}
-        target={[0, 0, 0]} // Target position (center of the scene)
-        initialPosition={cameraPosition} // Initial camera position
-        />
+        <OrbitControls/>
       </Suspense>
     </Canvas>
   );

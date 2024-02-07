@@ -1,11 +1,11 @@
-import { useState } from 'react'
 import './App.css'
+import React, { Suspense } from "react";
+import ModelViewer from './components/ModelViewer';
 
 function App() {
-
   return (
     <>
-      <p>test</p>
+      <ModelViewer scale={40} modelPath={"/3d/garden.glb"} />
     </>
   )
 }

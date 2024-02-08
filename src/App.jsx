@@ -7,7 +7,8 @@ function App() {
   return (
     <>
       <NavBar />
-      <ModelViewer modelPath={"/3d/garden.glb"} />
+      {/*3d model*/} 
+      {/* <ModelViewer modelPath={"/3d/garden.glb"} /> */}
     </>
   )
 }

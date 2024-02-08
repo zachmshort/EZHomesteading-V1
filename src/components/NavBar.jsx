@@ -5,9 +5,9 @@ const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">
+        <Link to="/">
           <img src="/images/ezhs-noslogan-barn-light.png" alt="EZHomesteading" width="386" height="59"/>
-        </a>
+        </Link>
         <form className="d-flex" role="search">
             <input className="form-control me-2" type="search" placeholder="Find Produce" aria-label="Search" />
             <button className="btn btn-outline-success" type="submit">Search</button>

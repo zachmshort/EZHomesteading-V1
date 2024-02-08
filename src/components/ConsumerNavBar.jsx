@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const NavBar = () => {
+const ConsumerNavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
@@ -18,12 +18,12 @@ const NavBar = () => {
         <Link to="/cart">
         <img src="/images/basket.svg"/>
         </Link>
-        <Link to="/co-op-store">
+        {/* <Link to="/co-op-store">
         <img src="/images/shop.svg"/>
-        </Link>
+        </Link> */}
       </div>
     </nav>
   );
 }
 
-export default NavBar;
+export default ConsumerNavBar;

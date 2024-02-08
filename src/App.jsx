@@ -1,12 +1,13 @@
 import React, { Suspense } from "react";
-// import ModelViewer from './components/ModelViewer';
-import ConsumerNavBar from './components/ConsumerNavBar';
+
+import { Outlet } from 'react-router-dom';
 import './App.css';
+// import ModelViewer from './components/ModelViewer';
 
 function App() {
   return (
     <>
-      <ConsumerNavBar />
+      <Outlet />
       {/*3d model*/} 
       {/* <ModelViewer modelPath={"/3d/garden.glb"} /> */}
     </>

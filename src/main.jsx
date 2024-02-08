@@ -5,6 +5,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+import StaticHome from "./pages/StaticHome";
 import App from './App';
 import Profile from './pages/Profile';
 import Cart from './pages/Cart';
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <App />,
+        element: <StaticHome />,
       },
       {
         path: '/profile',

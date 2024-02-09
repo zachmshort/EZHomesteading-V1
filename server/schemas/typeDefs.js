@@ -14,11 +14,11 @@ const typeDefs = `
     username: String
     password: String
     email : String
-    userProducts : [String]!
+    userProducts : [String]
     address : String
     hoursOfOperation : String
-    cart : [String]!
-    transactionHistory : [String]!
+    cart : [String]
+    transactionHistory : [String]
     userType : String
   }
 
@@ -28,17 +28,17 @@ const typeDefs = `
     species: String
     quantityType: String
     stock: Int
-    shelfLife: String
+    shelfLife: Int
     productPic: String
-    price: Int  
+    price: Float
 }
 
   type Query {
     Products: [Product]!
     Items: [Item]!
-    Item: [Item]!
+    Item(itemId: ID!): Item
     Users: [User]!
-    User: [User]!
+    User(userId: ID!): User
   }
 `;
 

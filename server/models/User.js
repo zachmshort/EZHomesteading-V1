@@ -24,21 +24,4 @@ const userSchema = new Schema({
 });
 
 const User = model("User", userSchema);
-
-const handleError = (err) => console.error(err);
-
-User.create({
-  profilePic: "e",
-  username: "testUser",
-  password: "e",
-  email: "test@hotmail.com",
-  //userProducts: "e",
-  address: "42 Wallaby Way, Sydney, Australia",
-  hoursOfOperation: "e",
-  //cart: "e",
-  transactionHistory: "e",
-  userType: "user",
-})
-  .then((result) => console.log("Created new document", result))
-  .catch((err) => handleError(err));
 module.exports = User;

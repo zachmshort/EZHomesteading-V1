@@ -12,18 +12,4 @@ const itemSchema = new Schema({
 });
 
 const Item = model("Item", itemSchema);
-
-const handleError = (err) => console.error(err);
-
-Item.create({
-  name: "Carrot",
-  species: "Carrot",
-  quantityType: "EA",
-  stock: 20,
-  shelfLife: 21,
-  price: 0.5,
-})
-  .then((result) => console.log("Created new document", result))
-  .catch((err) => handleError(err));
-
 module.exports = Item;

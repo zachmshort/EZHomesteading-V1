@@ -21,4 +21,5 @@ Product.create({
 })
   .then((result) => console.log("Created new document", result))
   .catch((err) => handleError(err));
+
 module.exports = Product;

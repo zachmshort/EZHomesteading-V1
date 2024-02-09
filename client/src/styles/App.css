@@ -1,0 +1,7 @@
+.Fresh {
+    font-family: "Playfair Display", serif;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}

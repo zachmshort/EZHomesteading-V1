@@ -4,8 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "webpack-dev-server",
+    "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm run dev\"",
+    "start": "npm run build && cd server && node server.js",
+    "server": "cd server nodemon server.js --ignore client",
+    "build": "cd client && npm run build",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "client": "cd client && npm start",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },

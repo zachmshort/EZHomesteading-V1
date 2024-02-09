@@ -7,7 +7,7 @@
     "dev": "webpack-dev-server",
     "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm run dev\"",
     "start": "npm run build && cd server && node server.js",
-    "server": "cd server/ && nodemon server.js --ignore client",
+    "server": "cd server nodemon server.js --ignore client",
     "build": "cd client && npm run build",
     "install": "cd server && npm i && cd ../client && npm i",
     "client": "cd client && npm start",
@@ -19,11 +19,10 @@
     "@heroicons/react": "^2.1.1",
     "@react-three/drei": "^9.97.3",
     "@react-three/fiber": "^8.15.16",
-    "concurrently": "^8.2.2",
-    "nodemon": "^3.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.0",
+    "tailwindcss": "^3.4.1",
     "three": "^0.161.0"
   },
   "devDependencies": {
@@ -34,7 +33,6 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
-    "tailwindcss": "^3.4.1",
     "vite": "^5.0.8"
   }
 }

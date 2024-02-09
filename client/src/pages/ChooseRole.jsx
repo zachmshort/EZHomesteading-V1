@@ -3,7 +3,7 @@ import ConsumerNavBar from '../components/ConsumerNavBar';
 import CoOpInfo from '../components/CoOpInfo';
 import ProducerInfo from '../components/ProducerInfo';
 import ConsumerInfo from '../components/ConsumerInfo';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 export default function ChooseRole() {
   const [isHovered, setIsHovered] = useState([false, false, false]);

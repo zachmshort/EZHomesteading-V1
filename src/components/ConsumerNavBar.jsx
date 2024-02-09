@@ -4,6 +4,7 @@ import { Menu, Popover, Transition } from '@headlessui/react'
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
+
 const user = {
 
   imageUrl:
@@ -44,9 +45,9 @@ export default function Example() {
               <div className="relative flex justify-between lg:gap-8 xl:grid xl:grid-cols-12">
                 <div className="flex md:absolute md:inset-y-0 md:left-0 lg:static xl:col-span-2">
                   <div className="flex flex-shrink-0 items-center">
-                    <a href="#">
+                    <a href="/">
                       <img
-                        className="h-8 w-auto"
+                        className="h-12 w-auto"
                         src="/images/ezh-logo-no-text.png"
                         alt="Your Company"
                       />

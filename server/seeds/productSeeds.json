@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Apple",
+    "shelfLife": 7,
+    "suggestPrice": 0.25,
+    "suggestedUnits": "EA",
+    "picture": ""
+  },
+  {
+    "name": "Romaine Lettuce",
+    "shelfLife": 3,
+    "suggestPrice": 1.0,
+    "suggestedUnits": "EA",
+    "picture": ""
+  }
+]

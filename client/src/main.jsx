@@ -9,6 +9,11 @@ import StaticHome from "./pages/StaticHome";
 import App from './App';
 import Profile from './pages/Profile';
 import Cart from './pages/Cart';
+import Login from './pages/Login'
+import ChooseRole from './pages/ChooseRole'
+import ConsumerRegister from './pages/ConsumerRegister'
+import CoOpRegister from './pages/Co-OpRegister'
+import ProducerRegister from './pages/ProducerRegister'
 // import coOpStore from './pages/CoOpStore.jsx';
 // import UserRegisterSelection from './pages/UserRegisterSelection.jsx';
 // import CoOpRegister from './pages/CoOpRegister.jsx';
@@ -35,6 +40,26 @@ const router = createBrowserRouter([
       {
         path: '/co-op-store',
         element: <coOpStore />,
+      },
+      {
+        path: '/login',
+        element: <Login />,
+      },
+      {
+        path: '/register',
+        element: <ChooseRole />,
+      },
+      {
+        path: '/consumer-registration',
+        element: <ConsumerRegister />,
+      },
+      {
+        path: '/co-op-registration',
+        element: <CoOpRegister />,
+      },
+      {
+        path: '/producer-registration',
+        element: <ProducerRegister />,
       },
     ],
   },

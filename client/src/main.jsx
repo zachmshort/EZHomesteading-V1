@@ -13,7 +13,7 @@ import Cart from './pages/Cart';
 import Login from './pages/Login'
 import ChooseRole from './pages/ChooseRole'
 import ConsumerRegister from './pages/ConsumerRegister'
-import CoOpRegister from './pages/Co-OpRegister'
+import CoOpRegister from './pages/CoOpRegister'
 import ProducerRegister from './pages/ProducerRegister'
 import ProfileSettings from "./pages/ProfileSettings";
 import OrderHistory from "./pages/OrderHistory";

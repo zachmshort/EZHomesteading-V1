@@ -9,16 +9,4 @@ const productSchema = new Schema({
 });
 
 const Product = model("Product", productSchema);
-
-const handleError = (err) => console.error(err);
-
-Product.create({
-  name: "Banana",
-  shelfLife: 3,
-  suggestPrice: 0.25,
-  suggestedUnits: "EA",
-  picture: "e",
-})
-  .then((result) => console.log("Created new document", result))
-  .catch((err) => handleError(err));
 module.exports = Product;

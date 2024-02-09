@@ -43,7 +43,7 @@ const typeDefs = `
 
   type Mutation {
     addUser(username: String!, password: String!, email: String!): User
-    addItem(name: String!, species: String!, quantityType: String!, stock: Int!, shelfLife: Int!, price: Float!): Item
+    addItem(name: String!, species: String!, quantityType: String!, stock: Int!, shelfLife: Int, price: Float!): Item
     
   }
 `;

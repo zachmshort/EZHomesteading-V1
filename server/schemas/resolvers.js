@@ -21,6 +21,10 @@ const resolvers = {
     Item: async (parent, { itemId }) => {
       return Item.findOne({ _id: itemId });
     },
+    //get all items for overall shop page
+    //find all items within a given shelf life range/perishability
+    //find all items by category
+    //find all items by sub category
   },
 
   Mutation: {
@@ -31,15 +35,17 @@ const resolvers = {
       //need to pass user.username, user.password, and user.email
       return User.create({ username, password, email });
     },
+    //different route to add a co-op user, or same route? different required fields
     //add item
     addItem: async (
       parent,
-      { name, species, quantityType, stock, shelfLife, price }
+      { name, category, subCategory, quantityType, stock, shelfLife, price }
     ) => {
-      //need to pass item.name, item.species, item.quantityType, item.stock, item.shelfLife, item.price
+      //need to pass item.name, item.category, item.subcategory, item.quantityType, item.stock, item.shelfLife, item.price
       return Item.create({
         name,
-        species,
+        category,
+        subCategory,
         quantityType,
         stock,
         shelfLife,

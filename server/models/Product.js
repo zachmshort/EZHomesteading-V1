@@ -8,16 +8,16 @@ const productSchema = new Schema({
   productPic: { type: String },
 });
 
-const Product = mongoose.model("Product", productSchema);
+const Product = model("Product", productSchema);
 
 const handleError = (err) => console.error(err);
 
 Product.create({
-  name: Banana,
+  name: "Banana",
   shelfLife: 3,
   suggestPrice: 0.25,
-  suggestedUnits: EA,
-  picture: "",
+  suggestedUnits: "EA",
+  picture: "e",
 })
   .then((result) => console.log("Created new document", result))
   .catch((err) => handleError(err));

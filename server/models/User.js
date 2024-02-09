@@ -3,30 +3,30 @@ const { Schema, model } = require("mongoose");
 const userSchema = new Schema({
   profilePic: { type: String, required: true },
   username: { type: String, required: true },
-  password: { type: password, required: true },
-  email: { type: email, required: true },
-  userProducts: {},
+  password: { type: String, required: true },
+  email: { type: String, required: true },
+  userProducts: { type: String },
   address: { type: String, required: true },
   hoursOfOperation: { type: String, required: true },
-  cart: {},
-  transactionHistory: {},
-  userType: {},
+  cart: { type: String },
+  transactionHistory: { type: String },
+  userType: { type: String, required: true },
 });
 
-const User = mongoose.model("User", userSchema);
+const User = model("User", userSchema);
 
 const handleError = (err) => console.error(err);
 
 User.create({
-  profilePic: "",
+  profilePic: "e",
   username: "testUser",
-  password: "",
+  password: "e",
   email: "test@hotmail.com",
-  userProducts: {},
+  userProducts: "e",
   address: "42 Wallaby Way, Sydney, Australia",
-  hoursOfOperation: "",
-  cart: {},
-  transactionHistory: {},
+  hoursOfOperation: "e",
+  cart: "e",
+  transactionHistory: "e",
   userType: "user",
 })
   .then((result) => console.log("Created new document", result))

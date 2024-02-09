@@ -7,7 +7,7 @@ const userSchema = new Schema({
   email: { type: String, required: true },
   userProducts: [
     {
-      type: Schema.Types.ObjectId,
+      type: String,
       ref: "item",
     },
   ],
@@ -15,11 +15,16 @@ const userSchema = new Schema({
   hoursOfOperation: { type: String },
   cart: [
     {
-      type: Schema.Types.ObjectId,
+      type: String,
       ref: "item",
     },
   ],
-  transactionHistory: { type: String },
+  transactionHistory: [
+    {
+      type: String,
+      ref: "item",
+    },
+  ],
   userType: { type: String },
 });
 

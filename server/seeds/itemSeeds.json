@@ -1,8 +1,134 @@
-{
-  "name": "Carrot",
-  "species": "Carrot",
-  "quantityType": "EA",
-  "stock": 20,
-  "shelfLife": 21,
-  "price": 0.5
-}
+[
+  {
+    "_id": "65c6b50daca472f50c555022",
+    "name": "Carrot",
+    "category": "Vegetable",
+    "subCategory": "Carrot",
+    "quantityType": "EA",
+    "stock": 20,
+    "shelfLife": 21,
+    "price": 0.5,
+    "productPic": ""
+  },
+  {
+    "_id": "65c6b50daca472f50c555023",
+    "name": "Granny Smith",
+    "category": "Fruit",
+    "subCategory": "Apples",
+    "stock": 20,
+    "shelfLife": 7,
+    "price": 0.25,
+    "quantityType": "EA",
+    "productPic": ""
+  },
+  {
+    "_id": "65c6b50daca472f50c555024",
+    "name": "Romaine Lettuce",
+    "category": "Vergetable",
+    "subCategory": "Lettuce",
+    "stock": 20,
+    "shelfLife": 3,
+    "price": 1.0,
+    "quantityType": "EA",
+    "productPic": ""
+  },
+  {
+    "_id": "65c6b50daca472f50c555025",
+    "name": "Basil",
+    "category": "Herb",
+    "subCategory": "Basil",
+    "stock": 20,
+    "shelfLife": 3,
+    "price": 1.0,
+    "quantityType": "OZ",
+    "productPic": ""
+  },
+  {
+    "_id": "65c6b50daca472f50c555026",
+    "name": "Green Beans",
+    "category": "Vegetable",
+    "subCategory": "Beans",
+    "stock": 20,
+    "shelfLife": 7,
+    "price": 1.25,
+    "quantityType": "OZ",
+    "productPic": ""
+  },
+  {
+    "_id": "65c6b50daca472f50c555027",
+    "name": "Head of Broccoli",
+    "category": "Vegetable",
+    "subCategory": "Broccoli",
+    "stock": 20,
+    "shelfLife": 7,
+    "price": 1.0,
+    "quantityType": "EA",
+    "productPic": ""
+  },
+  {
+    "_id": "65c6b50daca472f50c555028",
+    "name": "Pinto Beans",
+    "category": "Vegetable",
+    "subCategory": "Beans",
+    "stock": 20,
+    "shelfLife": 7,
+    "price": 4.0,
+    "quantityType": "Lb",
+    "productPic": ""
+  },
+  {
+    "_id": "65c6b50daca472f50c555029",
+    "name": "Pumpkin",
+    "category": "Fruit",
+    "subCategory": "Pumpkins",
+    "stock": 20,
+    "shelfLife": 7,
+    "price": 0.25,
+    "quantityType": "EA",
+    "productPic": ""
+  },
+  {
+    "_id": "65c6b50daca472f50c55502a",
+    "name": "Bell Pepper",
+    "category": "Fruit",
+    "subCategory": "Peppers",
+    "stock": 20,
+    "shelfLife": 7,
+    "price": 0.5,
+    "quantityType": "EA",
+    "productPic": ""
+  },
+  {
+    "_id": "65c6b50daca472f50c55502b",
+    "name": "Ghost Pepper",
+    "category": "Fruit",
+    "subCategory": "Peppers",
+    "stock": 20,
+    "shelfLife": 7,
+    "price": 0.5,
+    "quantityType": "EA",
+    "productPic": ""
+  },
+  {
+    "_id": "65c6b50daca472f50c55502c",
+    "name": "Habenero Pepper",
+    "category": "Fruit",
+    "subCategory": "Peppers",
+    "stock": 20,
+    "shelfLife": 7,
+    "price": 0.5,
+    "quantityType": "EA",
+    "productPic": ""
+  },
+  {
+    "_id": "65c6b50daca472f50c55502d",
+    "name": "Jalapeno Pepper",
+    "category": "Fruit",
+    "subCategory": "Peppers",
+    "stock": 20,
+    "shelfLife": 7,
+    "price": 0.5,
+    "quantityType": "EA",
+    "productPic": ""
+  }
+]

@@ -2,8 +2,10 @@ const typeDefs = `
   type Product {
     _id: ID
     name: String
-    shelfLife : String
-    suggestedPrice : Int
+    category: String
+    subCategory: String
+    shelfLife : Int
+    suggestedPrice : Float
     suggestedUnits : String
     productPic : String
   }
@@ -25,9 +27,11 @@ const typeDefs = `
   type Item{
     _id: ID
     name: String
-    species: String
+    category: String
+    subCategory: String
     quantityType: String
     stock: Int
+    units: String
     shelfLife: Int
     productPic: String
     price: Float

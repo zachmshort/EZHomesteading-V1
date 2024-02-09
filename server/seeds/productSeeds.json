@@ -1,16 +1,112 @@
 [
   {
-    "name": "Apple",
+    "_id": "65c6b662d0b2ba2396db28fd",
+    "name": "Granny Smith",
+    "category": "Fruit",
+    "subCategory": "Apples",
     "shelfLife": 7,
     "suggestPrice": 0.25,
     "suggestedUnits": "EA",
-    "picture": ""
+    "productPic": ""
   },
   {
+    "_id": "65c6b662d0b2ba2396db28fe",
     "name": "Romaine Lettuce",
+    "category": "Vergetable",
+    "subCategory": "Lettuce",
     "shelfLife": 3,
     "suggestPrice": 1.0,
     "suggestedUnits": "EA",
-    "picture": ""
+    "productPic": ""
+  },
+  {
+    "_id": "65c6b662d0b2ba2396db2901",
+    "name": "Basil",
+    "category": "Herb",
+    "subCategory": "Basil",
+    "shelfLife": 3,
+    "suggestPrice": 1.0,
+    "suggestedUnits": "OZ",
+    "productPic": ""
+  },
+  {
+    "_id": "65c6b662d0b2ba2396db2904",
+    "name": "Green Beans",
+    "category": "Vegetable",
+    "subCategory": "Beans",
+    "shelfLife": 7,
+    "suggestPrice": 1.25,
+    "suggestedUnits": "OZ",
+    "productPic": ""
+  },
+  {
+    "_id": "65c6b662d0b2ba2396db2902",
+    "name": "Head of Broccoli",
+    "category": "Vegetable",
+    "subCategory": "Broccoli",
+    "shelfLife": 7,
+    "suggestPrice": 1,
+    "suggestedUnits": "EA",
+    "productPic": ""
+  },
+  {
+    "_id": "65c6b662d0b2ba2396db2900",
+    "name": "Pinto Beans",
+    "category": "Vegetable",
+    "subCategory": "Beans",
+    "shelfLife": 7,
+    "suggestPrice": 4.0,
+    "suggestedUnits": "Lb",
+    "productPic": ""
+  },
+  {
+    "_id": "65c6b662d0b2ba2396db2903",
+    "name": "Pumpkin",
+    "category": "Fruit",
+    "subCategory": "Pumpkins",
+    "shelfLife": 7,
+    "suggestPrice": 0.25,
+    "suggestedUnits": "EA",
+    "productPic": ""
+  },
+  {
+    "_id": "65c6b662d0b2ba2396db28ff",
+    "name": "Bell Pepper",
+    "category": "Fruit",
+    "subCategory": "Peppers",
+    "shelfLife": 7,
+    "suggestPrice": 0.5,
+    "suggestedUnits": "EA",
+    "productPic": ""
+  },
+  {
+    "_id": "65c6b662d0b2ba2396db2905",
+    "name": "Ghost Pepper",
+    "category": "Fruit",
+    "subCategory": "Peppers",
+    "shelfLife": 7,
+    "suggestPrice": 0.5,
+    "suggestedUnits": "EA",
+    "productPic": ""
+  },
+  {
+    "_id": "65c6b662d0b2ba2396db2906",
+    "name": "Habenero Pepper",
+    "category": "Fruit",
+    "subCategory": "Peppers",
+    "shelfLife": 7,
+    "suggestPrice": 0.5,
+    "suggestedUnits": "EA",
+    "productPic": ""
+  },
+  {
+    "_id": "65c6b662d0b2ba2396db2907",
+    "name": "Jalapeno Pepper",
+    "category": "Fruit",
+    "subCategory": "Peppers",
+    "shelfLife": 7,
+    "suggestPrice": 0.5,
+    "suggestedUnits": "EA",
+    "productPic": ""
   }
 ]

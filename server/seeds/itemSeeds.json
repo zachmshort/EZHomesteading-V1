@@ -1,0 +1,8 @@
+{
+  "name": "Carrot",
+  "species": "Carrot",
+  "quantityType": "EA",
+  "stock": 20,
+  "shelfLife": 21,
+  "price": 0.5
+}

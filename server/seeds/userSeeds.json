@@ -1,0 +1,12 @@
+{
+  "profilePic": "e",
+  "username": "testUser",
+  "password": "e",
+  "email": "test@hotmail.com",
+
+  "address": "42 Wallaby Way, Sydney, Australia",
+  "hoursOfOperation": "e",
+
+  "transactionHistory": "e",
+  "userType": "user"
+}

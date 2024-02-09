@@ -5,10 +5,20 @@ const userSchema = new Schema({
   username: { type: String, required: true },
   password: { type: String, required: true },
   email: { type: String, required: true },
-  userProducts: { type: String },
+  userProducts: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "item",
+    },
+  ],
   address: { type: String, required: true },
   hoursOfOperation: { type: String, required: true },
-  cart: { type: String },
+  cart: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "item",
+    },
+  ],
   transactionHistory: { type: String },
   userType: { type: String, required: true },
 });
@@ -22,10 +32,10 @@ User.create({
   username: "testUser",
   password: "e",
   email: "test@hotmail.com",
-  userProducts: "e",
+  //userProducts: "e",
   address: "42 Wallaby Way, Sydney, Australia",
   hoursOfOperation: "e",
-  cart: "e",
+  //cart: "e",
   transactionHistory: "e",
   userType: "user",
 })

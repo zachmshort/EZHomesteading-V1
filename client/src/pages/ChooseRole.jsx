@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import ConsumerNavBar from '../components/ConsumerInfo';
+import ConsumerNavBar from '../components/ConsumerNavBar';
 import CoOpInfo from '../components/CoOpInfo';
 import ProducerInfo from '../components/ProducerInfo';
 import ConsumerInfo from '../components/ConsumerInfo';
@@ -47,21 +47,23 @@ export default function ChooseRole() {
                       className="pointer-events-none object-cover absolute inset-0 w-full h-full rounded-lg" 
                     />
                   </div>
-                  <button 
-                    onClick={() => {
+                  <button
+                    onClickCapture={event => {
+                      // Need to make modal appear on button click
+                      event.stopPropagation();
                       if (index === 0) setShowConsumerInfo(true);
                       else if (index === 1) setShowCoOpInfo(true);
                       else setShowProducerInfo(true);
                     }}
-                    className={`absolute bottom-4 right-4 bg-gray-800 text-white px-4 py-2 transition-opacity duration-300 rounded-lg ${isHovered[index] ? 'opacity-100' : 'opacity-0'}`}
+                    className={`absolute z-1000 bottom-4 right-4 bg-gray-800 text-white px-4 py-2 transition-opacity duration-300 rounded-lg ${isHovered[index] ? 'opacity-100' : 'opacity-0'}`}
                   >
                     More Info
                   </button>
-                  <Link to={index === 0 ? "/consumer-registration" : index === 1 ? "/co-op-registration" : "/producer-registration"}>
                     <button className={`absolute inset-0 flex justify-center items-center w-full h-full bg-transparent text-black opacity-0 hover:opacity-100 transition-opacity duration-300 focus:outline-none shadow-md`}>
+                      <Link to={index === 0 ? "/consumer-registration" : index === 1 ? "/co-op-registration" : "/producer-registration"}>
                       <span className="text-lg font-semibold">Become a {index === 0 ? 'Consumer' : index === 1 ? 'Co-Op' : 'Producer'}</span>
+                      </Link>
                     </button>
-                  </Link>
                 </div>
               </li>
             ))}

@@ -4,11 +4,13 @@ import ConsumerNavBar from '../components/ConsumerNavBar';
 export default function ProfileSettings() {
   return (
     <>
+    
     <ConsumerNavBar />
+    <div className="flex justify-center items-center mt-10">
     <form className="w-1/2">
       <div className="space-y-12">
         <div className="border-b border-gray-900/10 pb-12">
-          <h2 className="text-base font-semibold leading-7 text-gray-900">My Consumer Profile</h2>
+          <h2 className="text-base font-semibold leading-7 text-gray-900">My Profile</h2>
           <p className="mt-1 text-sm leading-6 text-gray-600">
             This information will be displayed publicly so be careful what you share.
           </p>
@@ -208,7 +210,7 @@ export default function ProfileSettings() {
         <div className="border-b border-gray-900/10 pb-12">
           <h2 className="text-base font-semibold leading-7 text-gray-900">Notifications</h2>
           <p className="mt-1 text-sm leading-6 text-gray-600">
-            We'll always let you know about important changes, but you pick what else you want to hear about.
+            Get message notifications, order status updates, and messages from EZH
           </p>
           <div className="mt-10 space-y-10">
             <fieldset>
@@ -225,9 +227,9 @@ export default function ProfileSettings() {
                   </div>
                   <div className="text-sm leading-6">
                     <label htmlFor="comments" className="font-medium text-gray-900">
-                      Comments
+                      Message Notifications
                     </label>
-                    <p className="text-gray-500">Get notified when someones posts a comment on a posting.</p>
+                    <p className="text-gray-500">Get notified when a user messages you.</p>
                   </div>
                 </div>
                 <div className="relative flex gap-x-3">
@@ -241,9 +243,9 @@ export default function ProfileSettings() {
                   </div>
                   <div className="text-sm leading-6">
                     <label htmlFor="candidates" className="font-medium text-gray-900">
-                      Candidates
+                      Order Status
                     </label>
-                    <p className="text-gray-500">Get notified when a candidate applies for a job.</p>
+                    <p className="text-gray-500">Get notified when an order is place, order is ready for pickup, etc.</p>
                   </div>
                 </div>
                 <div className="relative flex gap-x-3">
@@ -259,7 +261,7 @@ export default function ProfileSettings() {
                     <label htmlFor="offers" className="font-medium text-gray-900">
                       Offers
                     </label>
-                    <p className="text-gray-500">Get notified when a candidate accepts or rejects an offer.</p>
+                    <p className="text-gray-500">Get notified by EZH for offers, popular produce in your area, etc.</p>
                   </div>
                 </div>
               </div>
@@ -306,7 +308,7 @@ export default function ProfileSettings() {
           </div>
         </div>
       </div>
-      <div className="mt-6 flex items-center justify-end gap-x-6">
+      <div className="mt-6 mb-20 flex items-center justify-end gap-x-6">
         <button type="button" className="text-sm font-semibold leading-6 text-gray-900">
           Cancel
         </button>
@@ -318,6 +320,7 @@ export default function ProfileSettings() {
         </button>
       </div>
     </form>
+    </div>
     </>
   )
 }

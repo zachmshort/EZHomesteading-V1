@@ -5,6 +5,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+// import  from './pages/';
 import StaticHome from "./pages/StaticHome";
 import App from './App';
 import Profile from './pages/Profile';
@@ -15,6 +16,7 @@ import ConsumerRegister from './pages/ConsumerRegister'
 import CoOpRegister from './pages/Co-OpRegister'
 import ProducerRegister from './pages/ProducerRegister'
 import ProfileSettings from "./pages/ProfileSettings";
+import OrderHistory from "./pages/OrderHistory";
 // import coOpStore from './pages/CoOpStore.jsx';
 
 const router = createBrowserRouter([
@@ -61,6 +63,10 @@ const router = createBrowserRouter([
       {
         path: '/profile-settings',
         element: <ProfileSettings />,
+      },
+      {
+        path: '/order-history',
+        element: <OrderHistory />,
       },
     ],
   },

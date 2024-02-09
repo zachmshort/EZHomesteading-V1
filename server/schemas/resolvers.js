@@ -6,20 +6,21 @@ const resolvers = {
       return Product.find().sort({ createdAt: -1 });
     },
 
-    // items: async () => {
-    //   return Item.find().sort({ createdAt: -1 });
-    // },
+    Items: async () => {
+      return Item.find().sort({ createdAt: -1 });
+    },
 
-    // users: async () => {
-    //   return User.find().sort({ createdAt: -1 });
-    // },
+    Users: async () => {
+      return User.find().sort({ createdAt: -1 });
+    },
 
-    // user: async (parent, { userId }) => {
-    //   return User.findOne({ _id: userId });
-    // },
-    // item: async (parent, { itemId }) => {
-    //   return Item.findOne({ _id: itemId });
-    // },
+    User: async (parent, { userId }) => {
+      return User.findOne({ _id: userId });
+    },
+
+    Item: async (parent, { itemId }) => {
+      return Item.findOne({ _id: itemId });
+    },
   },
 
   //   Mutation: {},

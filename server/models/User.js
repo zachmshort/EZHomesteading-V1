@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 
 const userSchema = new Schema({
-  profilePic: { type: String, required: true },
+  profilePic: { type: String },
   username: { type: String, required: true },
   password: { type: String, required: true },
   email: { type: String, required: true },
@@ -11,8 +11,8 @@ const userSchema = new Schema({
       ref: "item",
     },
   ],
-  address: { type: String, required: true },
-  hoursOfOperation: { type: String, required: true },
+  address: { type: String },
+  hoursOfOperation: { type: String },
   cart: [
     {
       type: Schema.Types.ObjectId,
@@ -20,7 +20,7 @@ const userSchema = new Schema({
     },
   ],
   transactionHistory: { type: String },
-  userType: { type: String, required: true },
+  userType: { type: String },
 });
 
 const User = model("User", userSchema);

@@ -23,7 +23,30 @@ const resolvers = {
     },
   },
 
-  //   Mutation: {},
+  Mutation: {
+    //add cart item
+    //add user product item
+    //add user
+    addUser: async (parent, { username, password, email }) => {
+      //need to pass user.username, user.password, and user.email
+      return User.create({ username, password, email });
+    },
+    //add item
+    addItem: async (
+      parent,
+      { name, species, quantityType, stock, shelfLife, price }
+    ) => {
+      //need to pass item.name, item.species, item.quantityType, item.stock, item.shelfLife, item.price
+      return Item.create({
+        name,
+        species,
+        quantityType,
+        stock,
+        shelfLife,
+        price,
+      });
+    },
+  },
 };
 
 module.exports = resolvers;

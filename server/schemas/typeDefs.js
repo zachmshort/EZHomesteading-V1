@@ -40,6 +40,12 @@ const typeDefs = `
     Users: [User]!
     User(userId: ID!): User
   }
+
+  type Mutation {
+    addUser(username: String!, password: String!, email: String!): User
+    addItem(name: String!, species: String!, quantityType: String!, stock: Int!, shelfLife: Int!, price: Float!): Item
+    
+  }
 `;
 
 module.exports = typeDefs;

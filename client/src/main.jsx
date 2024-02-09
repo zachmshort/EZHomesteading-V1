@@ -14,11 +14,8 @@ import ChooseRole from './pages/ChooseRole'
 import ConsumerRegister from './pages/ConsumerRegister'
 import CoOpRegister from './pages/Co-OpRegister'
 import ProducerRegister from './pages/ProducerRegister'
+import ProfileSettings from "./pages/ProfileSettings";
 // import coOpStore from './pages/CoOpStore.jsx';
-// import UserRegisterSelection from './pages/UserRegisterSelection.jsx';
-// import CoOpRegister from './pages/CoOpRegister.jsx';
-// import ConsumerRegister from './pages/ConsumerRegister.jsx';
-// import Login from './pages/Login.jsx';
 
 const router = createBrowserRouter([
   {
@@ -60,6 +57,10 @@ const router = createBrowserRouter([
       {
         path: '/producer-registration',
         element: <ProducerRegister />,
+      },
+      {
+        path: '/profile-settings',
+        element: <ProfileSettings />,
       },
     ],
   },

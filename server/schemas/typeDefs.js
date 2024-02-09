@@ -1,22 +1,28 @@
 const typeDefs = `
   type Product {
     _id: ID
-        name: String
-        shelfLife : String
-        suggestedPrice : Int
-        suggestedUnits : Int
-        productPic : String
+    name: String
+    shelfLife : String
+    suggestedPrice : Int
+    suggestedUnits : String
+    productPic : String
+  }
+  type User {
+    _id: ID
+    profilePic: String
+    username: String
+    password: String
+    email : String
+    userProducts : [String]!
+    address : String
+    hoursOfOperation : String
+    cart : [String]!
+    transactionHistory : [String]!
+    userType : String
   }
 
   type Query {
-    Product: [Product]!
-  }
-
-  type Mutation {
-    addThought(thoughtText: String!, thoughtAuthor: String!): Thought
-    addComment(thoughtId: ID!, commentText: String!): Thought
-    removeThought(thoughtId: ID!): Thought
-    removeComment(thoughtId: ID!, commentId: ID!): Thought
+    Products: [Product]!
   }
 `;
 

@@ -8,7 +8,8 @@
     "stock": 20,
     "shelfLife": 21,
     "price": 0.5,
-    "productPic": ""
+    "productPic": "",
+    "userId": "65c6b662d0b2ba2396db2913"
   },
   {
     "_id": "65c6b50daca472f50c555023",
@@ -19,7 +20,8 @@
     "shelfLife": 7,
     "price": 0.25,
     "quantityType": "EA",
-    "productPic": ""
+    "productPic": "",
+    "userId": "65c6b662d0b2ba2396db2913"
   },
   {
     "_id": "65c6b50daca472f50c555024",
@@ -30,7 +32,8 @@
     "shelfLife": 3,
     "price": 1.0,
     "quantityType": "EA",
-    "productPic": ""
+    "productPic": "",
+    "userId": "65c6b662d0b2ba2396db2913"
   },
   {
     "_id": "65c6b50daca472f50c555025",
@@ -41,7 +44,8 @@
     "shelfLife": 3,
     "price": 1.0,
     "quantityType": "OZ",
-    "productPic": ""
+    "productPic": "",
+    "userId": "65c6b662d0b2ba2396db2913"
   },
   {
     "_id": "65c6b50daca472f50c555026",
@@ -52,7 +56,8 @@
     "shelfLife": 7,
     "price": 1.25,
     "quantityType": "OZ",
-    "productPic": ""
+    "productPic": "",
+    "userId": "65c6b662d0b2ba2396db2913"
   },
   {
     "_id": "65c6b50daca472f50c555027",
@@ -63,7 +68,8 @@
     "shelfLife": 7,
     "price": 1.0,
     "quantityType": "EA",
-    "productPic": ""
+    "productPic": "",
+    "userId": "65c6b662d0b2ba2396db2913"
   },
   {
     "_id": "65c6b50daca472f50c555028",
@@ -74,7 +80,8 @@
     "shelfLife": 7,
     "price": 4.0,
     "quantityType": "Lb",
-    "productPic": ""
+    "productPic": "",
+    "userId": "65c6b662d0b2ba2396db2913"
   },
   {
     "_id": "65c6b50daca472f50c555029",
@@ -85,7 +92,8 @@
     "shelfLife": 7,
     "price": 0.25,
     "quantityType": "EA",
-    "productPic": ""
+    "productPic": "",
+    "userId": "65c6b662d0b2ba2396db2913"
   },
   {
     "_id": "65c6b50daca472f50c55502a",
@@ -96,7 +104,8 @@
     "shelfLife": 7,
     "price": 0.5,
     "quantityType": "EA",
-    "productPic": ""
+    "productPic": "",
+    "userId": "65c6b662d0b2ba2396db2913"
   },
   {
     "_id": "65c6b50daca472f50c55502b",
@@ -107,7 +116,8 @@
     "shelfLife": 7,
     "price": 0.5,
     "quantityType": "EA",
-    "productPic": ""
+    "productPic": "",
+    "userId": "65c6b662d0b2ba2396db2913"
   },
   {
     "_id": "65c6b50daca472f50c55502c",
@@ -118,7 +128,8 @@
     "shelfLife": 7,
     "price": 0.5,
     "quantityType": "EA",
-    "productPic": ""
+    "productPic": "",
+    "userId": "65c6b662d0b2ba2396db2913"
   },
   {
     "_id": "65c6b50daca472f50c55502d",
@@ -129,6 +140,7 @@
     "shelfLife": 7,
     "price": 0.5,
     "quantityType": "EA",
-    "productPic": ""
+    "productPic": "",
+    "userId": "65c6b662d0b2ba2396db2913"
   }
 ]

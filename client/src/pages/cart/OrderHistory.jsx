@@ -1,4 +1,4 @@
-import ConsumerNavBar from '../components/ConsumerNavBar';
+import ConsumerNavBar from '../../components/navbar/ConsumerNavBar';
 
 const orders = [
     {

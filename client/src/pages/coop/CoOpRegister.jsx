@@ -1,6 +1,6 @@
 import {  useState } from "react"; //useEffect,
 import { Link } from "react-router-dom";
-import ConsumerNavBar from "../components/ConsumerNavBar";
+import ConsumerNavBar from "../../components/navbar/ConsumerNavBar";
 import { ExclamationCircleIcon } from '@heroicons/react/20/solid'
 
 export default function CoOpRegister() {

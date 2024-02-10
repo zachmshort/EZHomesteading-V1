@@ -1,5 +1,5 @@
 import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
-import ConsumerNavBar from '../components/ConsumerNavBar';
+import ConsumerNavBar from '../../components/navbar/ConsumerNavBar';
 
 export default function ProfileSettings() {
   return (

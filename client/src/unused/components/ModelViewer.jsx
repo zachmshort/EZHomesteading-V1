@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import GltfModel from "./GltfModel";
+import GltfModel from "./pages/GltfModel";
 import * as THREE from 'three';
 
 const ModelViewer = ({ modelPath, scale = 1, position = [0, 0, 0]}) => {

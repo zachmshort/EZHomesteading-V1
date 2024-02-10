@@ -5,7 +5,7 @@ const resolvers = {
     Products: async () => {
       return Product.find().sort({ createdAt: -1 });
     },
-
+    //get all items for overall shop page
     Items: async () => {
       return Item.find().sort({ createdAt: -1 });
     },
@@ -14,16 +14,26 @@ const resolvers = {
       return User.find().sort({ createdAt: -1 });
     },
 
+    //get one user by id
     User: async (parent, { userId }) => {
       return User.findOne({ _id: userId });
     },
 
+    //get one item by id
     Item: async (parent, { itemId }) => {
       return Item.findOne({ _id: itemId });
     },
-    //get all items for overall shop page
+
     //find all items within a given shelf life range/perishability
     //find all items by category
+    itemsByCategory: async (parent, { category }) => {
+      return Item.find({ category: category }).sort({ createdAt: -1 });
+    },
+
+    //find all items by subcategory
+    itemsBySubCategory: async (parent, { subCategory }) => {
+      return Item.find({ subCategory: subCategory }).sort({ createdAt: -1 });
+    },
     //find all items by sub category
   },
 

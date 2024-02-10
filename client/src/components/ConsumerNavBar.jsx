@@ -16,6 +16,7 @@ const navigation = [
   { name: 'Teams', href: '#', current: false },
   { name: 'Directory', href: '#', current: false },
 ]
+
 const userNavigation = [
   { name: 'Your Profile', href: '#' },
   { name: 'Settings', href: '/profile-settings' },
@@ -24,7 +25,7 @@ const userNavigation = [
 const cartNavigation = [
   { name: 'View Cart', href: '/cart' },
   { name: 'Order History', href: '/order-history' },
-  { name: 'Find Produce', href: '#' },
+  { name: 'Find Produce', href: '/shop-ezh' },
 ]
 
 function classNames(...classes) {

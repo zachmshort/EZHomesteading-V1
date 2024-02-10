@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ConsumerNavBar from '../components/ConsumerNavBar';
+import ConsumerNavBar from '../../components/navbar/ConsumerNavBar';
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'

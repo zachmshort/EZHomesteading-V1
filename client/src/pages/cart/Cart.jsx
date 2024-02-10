@@ -1,4 +1,4 @@
-import ConsumerNavBar from '../components/ConsumerNavBar';
+import ConsumerNavBar from '../../components/navbar/ConsumerNavBar';
 import { Fragment, useState } from 'react'
 import { Dialog, Tab, Transition } from '@headlessui/react'
 import { XMarkIcon as XMarkIconOutline } from '@heroicons/react/24/outline'

@@ -1,18 +1,7 @@
-import ConsumerNavBar from '../components/ConsumerNavBar';
-import React, { Fragment, useState, useEffect }  from 'react';
-import '../styles/App.css'
+import ConsumerNavBar from '../../components/navbar/ConsumerNavBar';
+import React, { useState }  from 'react';
+import '../../styles/App.css'
 import { Link } from 'react-router-dom';
-import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
-import {
-  Bars3Icon,
-  MagnifyingGlassIcon,
-  QuestionMarkCircleIcon,
-  ShoppingBagIcon,
-  XMarkIcon,
-} from '@heroicons/react/24/outline'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
-
-
 
 const categories = [
   {

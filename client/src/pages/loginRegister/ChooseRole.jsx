@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import ConsumerNavBar from '../components/ConsumerNavBar';
-import CoOpInfo from '../components/CoOpInfo';
-import ProducerInfo from '../components/ProducerInfo';
-import ConsumerInfo from '../components/ConsumerInfo';
+import ConsumerNavBar from '../../components/navbar/ConsumerNavBar';
+// import CoOpInfo from '../components/CoOpInfo';
+// import ProducerInfo from '../components/ProducerInfo';
+// import ConsumerInfo from '../components/ConsumerInfo';
 import { useState } from 'react';
 
 export default function ChooseRole() {

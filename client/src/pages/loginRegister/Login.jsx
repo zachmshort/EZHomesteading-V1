@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import ConsumerNavBar from '../components/ConsumerNavBar';
+import ConsumerNavBar from '../../components/navbar/ConsumerNavBar';
 
 export default function Login() {
   return (

@@ -40,3 +40,71 @@ export const QUERY_USERS = gql`
     }
   }
 `;
+export const QUERY_USER = gql`
+  query Query($userId: ID!) {
+    User(userId: $userId) {
+      _id
+      address
+      cart
+      email
+      hoursOfOperation
+      password
+      profilePic
+      transactionHistory
+      userProducts
+      userType
+      username
+    }
+  }
+`;
+export const QUERY_ITEM = gql`
+  query Item($itemId: ID!) {
+    Item(itemId: $itemId) {
+      _id
+      category
+      name
+      price
+      productPic
+      quantityType
+      shelfLife
+      stock
+      subCategory
+      units
+      userId
+    }
+  }
+`;
+export const QUERY_ITEM_BY_CAT = gql`
+  query ItemsByCategory($category: String!) {
+    itemsByCategory(category: $category) {
+      _id
+      category
+      name
+      price
+      productPic
+      quantityType
+      shelfLife
+      stock
+      subCategory
+      units
+      userId
+    }
+  }
+`;
+export const QUERY_ITEM_BY_SUBCAT = gql`
+  query ItemsBySubCategory($subCategory: String!) {
+    itemsBySubCategory(subCategory: $subCategory) {
+      _id
+      category
+      name
+      price
+      productPic
+      quantityType
+      shelfLife
+      stock
+      subCategory
+      units
+      userId
+    }
+  }
+`;

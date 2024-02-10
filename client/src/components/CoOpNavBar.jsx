@@ -10,22 +10,27 @@ const user = {
     '/images/person-circle.svg',
 }
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Calendar', href: '#', current: false },
-  { name: 'Teams', href: '#', current: false },
-  { name: 'Directory', href: '#', current: false },
+  { name: 'Dashboard', href: '/', current: true },
+  { name: 'Calendar', href: '/', current: false },
+  { name: 'Teams', href: '/', current: false },
+  { name: 'Directory', href: '/', current: false },
 ]
 const userNavigation = [
-  { name: 'Your Profile', href: '#' },
-  { name: 'Settings', href: '#' },
-  { name: 'Sign out', href: '#' },
+  { name: 'Your Profile', href: '/' },
+  { name: 'Settings', href: '/' },
+  { name: 'Sign out', href: '/' },
+]
+const shopNavigation = [
+  { name: 'my-co-op', href: '/' },
+  { name: 'co-op-settings', href: '/' },
+  { name: '', href: '/' },
 ]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Example() {
+export default function CoOpNavBar() {
   return (
     <>
       {/* When the mobile menu is open, add `overflow-hidden` to the `body` element to prevent double scrollbars */}

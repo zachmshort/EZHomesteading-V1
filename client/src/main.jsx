@@ -17,6 +17,7 @@ import CoOpRegister from './pages/CoOpRegister'
 import ProducerRegister from './pages/ProducerRegister'
 import ProfileSettings from "./pages/ProfileSettings";
 import OrderHistory from "./pages/OrderHistory";
+import ShopEZH from './pages/ShopEZH';
 // import coOpStore from './pages/CoOpStore.jsx';
 
 const router = createBrowserRouter([
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
       {
         path: '/order-history',
         element: <OrderHistory />,
+      },
+      {
+        path: '/shop-ezh',
+        element: <ShopEZH />,
       },
     ],
   },

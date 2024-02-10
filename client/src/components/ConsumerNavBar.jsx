@@ -16,6 +16,7 @@ const navigation = [
   { name: 'Teams', href: '#', current: false },
   { name: 'Directory', href: '#', current: false },
 ]
+
 const userNavigation = [
   { name: 'Your Profile', href: '#' },
   { name: 'Settings', href: '/profile-settings' },
@@ -24,14 +25,14 @@ const userNavigation = [
 const cartNavigation = [
   { name: 'View Cart', href: '/cart' },
   { name: 'Order History', href: '/order-history' },
-  { name: 'Find Produce', href: '#' },
+  { name: 'Find Produce', href: '/shop-ezh' },
 ]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Example() {
+export default function ConsumerNavBar() {
   return (
     <>
       {/* When the mobile menu is open, add `overflow-hidden` to the `body` element to prevent double scrollbars */}

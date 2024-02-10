@@ -159,12 +159,11 @@ export default function StaticHome() {
             <p className="mt-4 text-xl text-white">
               Produce Made Simple
             </p>
-            <a
-              href="#"
+            <Link to="/shop-ezh"
               className="mt-8 inline-block rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium text-gray-900 hover:bg-gray-100"
             >
               Find Produce Near Me
-            </a>
+            </Link>
           </div>
         </div>
   

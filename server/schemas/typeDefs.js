@@ -43,6 +43,8 @@ const typeDefs = `
     Item(itemId: ID!): Item
     Users: [User]!
     User(userId: ID!): User
+    itemsByCategory(category: String!): [Item]!
+    itemsBySubCategory(subCategory: String!): [Item]!
   }
 
   type Mutation {

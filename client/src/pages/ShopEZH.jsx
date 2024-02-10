@@ -1,45 +1,53 @@
 import React, { useState } from 'react';
 import ConsumerNavBar from '../components/ConsumerNavBar';
 
-// Constants for categories, subcategories, and items
+//constants for categories, sub cats, and products in sub cats
 const categories = ['Highly Perishable', 'Perishable', 'Less Perishable', 'Non-Perishable', 'Non-Consumable', 'Self Sufficiency'];
 const subcategories = Array.from({ length: 6 }, (_, i) => [`Subcategory ${i + 1}-1`, `Subcategory ${i + 1}-2`, `Subcategory ${i + 1}-3`, `Subcategory ${i + 1}-4`, `Subcategory ${i + 1}-5`, `Subcategory ${i + 1}-6`]);
 const items = Array.from({ length: 6 }, (_, i) => Array.from({ length: 6 }, (_, j) => [`Item ${i + 1}-${j + 1}-1`, `Item ${i + 1}-${j + 1}-2`, `Item ${i + 1}-${j + 1}-3`, `Item ${i + 1}-${j + 1}-4`, `Item ${i + 1}-${j + 1}-5`, `Item ${i + 1}-${j + 1}-6`]));
 
 export default function ShopEZH() {
+
+  // variables for selected category, subcategory, product, and subcategory options visibility
   const [selectedCategory, setSelectedCategory] = useState(new Array(categories.length).fill(null));
   const [selectedSubcategory, setSelectedSubcategory] = useState(new Array(categories.length).fill(null));
   const [selectedItem, setSelectedItem] = useState(new Array(categories.length).fill(null));
   const [showSubcategoryOptions, setShowSubcategoryOptions] = useState(new Array(categories.length).fill(false));
 
+  // handler for category selection
   const handleCategoryClick = (index) => {
     const newSelectedCategory = [...selectedCategory];
     newSelectedCategory[index] = newSelectedCategory[index] === index ? null : index;
     setSelectedCategory(newSelectedCategory);
 
-    const newSelectedSubcategory = [...selectedSubcategory];
-    newSelectedSubcategory[index] = null; // Reset subcategory when category changes
-    setSelectedSubcategory(newSelectedSubcategory);
+  // Reset subcategory and item when category changes
+  const newSelectedSubcategory = [...selectedSubcategory];
+  newSelectedSubcategory[index] = null; 
+  setSelectedSubcategory(newSelectedSubcategory);
 
-    const newSelectedItem = [...selectedItem];
-    newSelectedItem[index] = null; // Reset item when category changes
-    setSelectedItem(newSelectedItem);
+  const newSelectedItem = [...selectedItem];
+  newSelectedItem[index] = null; 
+  setSelectedItem(newSelectedItem);
 
-    const newShowSubcategoryOptions = [...showSubcategoryOptions];
-    newShowSubcategoryOptions[index] = !newShowSubcategoryOptions[index];
-    setShowSubcategoryOptions(newShowSubcategoryOptions);
-  };
+  // turn visibility off and on for subcategory options
+  const newShowSubcategoryOptions = [...showSubcategoryOptions];
+  newShowSubcategoryOptions[index] = !newShowSubcategoryOptions[index];
+  setShowSubcategoryOptions(newShowSubcategoryOptions);
+};
 
+  // handler for subcategory selection
   const handleSubcategoryClick = (categoryIndex, subcategoryIndex) => {
-    const newSelectedSubcategory = [...selectedSubcategory];
-    newSelectedSubcategory[categoryIndex] = newSelectedSubcategory[categoryIndex] === subcategoryIndex ? null : subcategoryIndex;
-    setSelectedSubcategory(newSelectedSubcategory);
+  const newSelectedSubcategory = [...selectedSubcategory];
+  newSelectedSubcategory[categoryIndex] = newSelectedSubcategory[categoryIndex] === subcategoryIndex ? null : subcategoryIndex;
+  setSelectedSubcategory(newSelectedSubcategory);
 
-    const newSelectedItem = [...selectedItem];
-    newSelectedItem[categoryIndex] = null; // Reset item when subcategory changes
-    setSelectedItem(newSelectedItem);
+  // resets the items viewed when subcategory changes
+  const newSelectedItem = [...selectedItem];
+  newSelectedItem[categoryIndex] = null; 
+  setSelectedItem(newSelectedItem);
   };
 
+  // handler for item selection, needs to change modify card component, coming soon
   const handleItemClick = (categoryIndex, subcategoryIndex, itemIndex) => {
     const newSelectedItem = [...selectedItem];
     newSelectedItem[categoryIndex] = newSelectedItem[categoryIndex] === itemIndex ? null : itemIndex;
@@ -47,10 +55,11 @@ export default function ShopEZH() {
   };
 
   return (
-    <div>
+    <>
       <ConsumerNavBar />
       {categories.map((category, index) => (
-        <div key={index} style={{ position: 'relative', zIndex: categories.length - index }}>
+        // z index formatting makes sure items appear above sub-cats, and sub cats above major categories
+        <div key={index} style={{ position: 'relative', zIndex: categories.length - index }}> 
           <div className="relative inline-block">
             <div className="flex-none p-2">
               <button onClick={() => handleCategoryClick(index)} className="w-48 px-2 py-2 text-gray-700 bg-white border-2 border-white rounded-md shadow focus:outline-none focus:border-blue-600" style={{ zIndex: categories.length - index }}>
@@ -79,6 +88,6 @@ export default function ShopEZH() {
           </div>
         </div>
       ))}
-    </div>
+    </>
   );
 }

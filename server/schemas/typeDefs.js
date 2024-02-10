@@ -49,9 +49,15 @@ const typeDefs = `
   }
 
   type Mutation {
+    addCartItem(userId: String!, itemId: String!, cart: [String]!): User
+    deleteCartItem(userId: String!, itemId: String!): User
+    addProductItem(userId: String!, itemId: String!, userProducts: [String]!): User
+    deleteProductItem(userId: String!, itemId: String!): User
     addUser(username: String!, password: String!, email: String!): User
-    addItem(name: String!, species: String!, quantityType: String!, stock: Int!, shelfLife: Int, price: Float!): Item
-    
+    updateUser(userId: ID!, profilePic: String!, username: String!, password: String!, email: String!, address: String!, hoursOfOperation: String!, userType: String!): User
+    deleteUser(userId: ID!): User
+    addItem(name: String!, category: String!, subCategory: String!, quantityType: String!, stock: Int!, shelfLife: Int, price: Float!, userId: String!): Item
+    updateItem(itemId: String!, name: String!, quantityType: String!, stock: Int!, shelfLife: Int!, price: Float!): Item
   }
 `;
 

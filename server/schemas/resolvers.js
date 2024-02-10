@@ -39,17 +39,95 @@ const resolvers = {
 
   Mutation: {
     //add cart item
+    addCartItem: async (parent, { userId, itemId, cart }) => {
+      return User.findOneAndUpdate(
+        { _id: userId },
+        { cart: [...cart, itemId] },
+        { new: true }
+      );
+    },
+
+    //delete user
+    deleteCartItem: async (parent, { userId, itemId }) => {
+      return User.findOneAndUpdate(
+        { _id: userId },
+        { $pull: { cart: itemId } },
+        { new: true }
+      );
+    },
+
     //add user product item
+    addProductItem: async (parent, { userId, itemId, userProducts }) => {
+      return User.findOneAndUpdate(
+        { _id: userId },
+        { userProducts: [...userProducts, itemId] },
+        { new: true }
+      );
+    },
+
+    //delete product item
+    deleteProductItem: async (parent, { userId, itemId }) => {
+      return User.findOneAndUpdate(
+        { _id: userId },
+        { $pull: { userProducts: itemId } },
+        { new: true }
+      );
+    },
+
     //add user
     addUser: async (parent, { username, password, email }) => {
       //need to pass user.username, user.password, and user.email
       return User.create({ username, password, email });
     },
+
+    //update a user
+    updateUser: async (
+      parent,
+      {
+        userId,
+        profilePic,
+        username,
+        password,
+        email,
+        address,
+        hoursOfOperation,
+        userType,
+      }
+    ) => {
+      return User.findOneAndUpdate(
+        { _id: userId },
+        {
+          profilePic,
+          username,
+          password,
+          email,
+          address,
+          hoursOfOperation,
+          userType,
+        },
+        { new: true }
+      );
+    },
+
+    //delete user
+    deleteUser: async (parent, { userId }) => {
+      return User.findOneAndDelete({ _id: userId });
+    },
+
     //different route to add a co-op user, or same route? different required fields
     //add item
     addItem: async (
       parent,
-      { name, category, subCategory, quantityType, stock, shelfLife, price }
+      {
+        name,
+        category,
+        subCategory,
+        quantityType,
+        stock,
+        shelfLife,
+        price,
+        userId,
+      }
     ) => {
       //need to pass item.name, item.category, item.subcategory, item.quantityType, item.stock, item.shelfLife, item.price
       return Item.create({
@@ -60,7 +138,26 @@ const resolvers = {
         stock,
         shelfLife,
         price,
+        userId,
       });
+    },
+
+    //update item listing
+    updateItem: async (
+      parent,
+      { itemId, name, quantityType, stock, shelfLife, price }
+    ) => {
+      return Item.findOneAndUpdate(
+        { _id: itemId },
+        {
+          name,
+          quantityType,
+          stock,
+          shelfLife,
+          price,
+        },
+        { new: true }
+      );
     },
   },
 };

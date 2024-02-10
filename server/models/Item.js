@@ -10,6 +10,8 @@ const itemSchema = new Schema({
   shelfLife: { type: Number },
   price: { type: Number, required: true },
   productPic: { type: String },
+  quantityType: { type: String, required: true },
+  userId: { type: String, required: true },
 });
 //highly perishible: 3 day shelf life
 //perishible: 2 week shelf life (14 days)

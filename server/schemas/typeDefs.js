@@ -35,6 +35,7 @@ const typeDefs = `
     shelfLife: Int
     productPic: String
     price: Float
+    userId: String
 }
 
   type Query {

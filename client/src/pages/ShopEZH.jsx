@@ -101,6 +101,9 @@ export default function ShopEZH() {
   return (
     <>
       <ConsumerNavBar />
+
+      <div className="flex">
+        <div>
       <Popover className="relative isolate z-50">
         <Popover.Button className="ml-2 mb-2 mt-3 inline-flex w-48 justify-center items-center gap-x-1 text-med font-semibold leading-6 text-gray-900 py-3 px-4 rounded-lg shadow-sm bg-white ">
           Shop by Category
@@ -114,7 +117,7 @@ export default function ShopEZH() {
           leaveFrom="opacity-100 translate-y-0"
           leaveTo="opacity-0 -translate-y-1"
         >
-          <Popover.Panel className="absolute inset-x-0 top-0 -z-10 bg-white pt-4 shadow-lg ring-1 ring-gray-900/5">
+          <Popover.Panel className="fixed pb-5 inset-x-0 top-0 z-50 bg-white pt-4 shadow-lg ring-1 ring-gray-900/5">
             <div className="mx-auto grid max-w-7xl grid-cols-6 gap-2 px-4 sm:grid-cols-6 sm:gap-2 lg:gap-2 lg:px-4 xl:gap-2">
               {categorySelect.map((item) => (
                 <div
@@ -166,7 +169,11 @@ export default function ShopEZH() {
             </div>
           </div>
         </div>
+        
       ))}
+      </div>
+      <div className="flex-none border-r border-gray-300 h-screen" style={{ width: '12.5%' }}></div>
+    </div>
     </>
   );
 }

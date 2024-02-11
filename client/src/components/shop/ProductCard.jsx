@@ -8,11 +8,11 @@ import {
   Button,
 } from "@material-tailwind/react";
 
-export default function ProductCard({ productName, price, description, imageUrl, shelfLife }) {
-  
+export default function ProductCard({ productName, price, description, imageUrl, shelfLife, quantity, quantityType }) {
   return (
-    <Card className="w-96 mb-0 mr-0 flex">
-      <CardHeader shadow={false} floated={false} className="h-96">
+    
+    <Card className="w-full lg:w-96 lg:max-h-96 mb-10 ml-12 lg:ml-3 flex">
+      <CardHeader shadow={false} floated={false} className="h-48 lg:h-48">
         <img
           src={imageUrl}
           alt={productName}
@@ -20,7 +20,7 @@ export default function ProductCard({ productName, price, description, imageUrl,
         />
       </CardHeader>
       <CardBody>
-        <div className="mb-2 flex items-center justify-between">
+        <div className="mb-2 flex items-center justify-between flex-col lg:flex-row">
           <Typography color="blue-gray" className="font-medium">
             {productName}
           </Typography>
@@ -41,6 +41,13 @@ export default function ProductCard({ productName, price, description, imageUrl,
           className="font-normal opacity-75"
         >
           Shelf Life: {shelfLife}
+        </Typography>
+        <Typography
+          variant="small"
+          color="gray"
+          className="font-normal opacity-75"
+        >
+          {quantity}{quantityType}
         </Typography>
       </CardBody>
       <CardFooter className="pt-0">

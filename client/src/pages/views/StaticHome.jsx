@@ -1,4 +1,5 @@
-import ConsumerNavBar from '../../components/navbar/ConsumerNavBar';
+import CoOpNavBar from '../../components/navbar/CoOpNavBar';
+// import ConsumerNavBar from '../../components/navbar/ConsumerNavBar';
 import React, { useState }  from 'react';
 import '../../styles/App.css'
 import { Link } from 'react-router-dom';
@@ -115,7 +116,7 @@ export default function StaticHome() {
         
       <div className="bg-white">
         {/* Mobile menu */}
-        <ConsumerNavBar />
+        <CoOpNavBar />
 
   
         {/* Hero section */}
@@ -146,7 +147,7 @@ export default function StaticHome() {
           <div className="relative mx-auto flex max-w-3xl flex-col items-center px-6 py-32 text-center sm:py-64 lg:px-0">
             <h1 className="text-4xl font-bold tracking-tight text-white lg:text-6xl Fresh">Fresh, Local, Organic</h1>
             <p className="mt-4 text-xl text-white">
-              Produce Made Simple
+              EZ Homesteading connects family scale farmers & gardeners with people in their community. 
             </p>
             <Link to="/shop-ezh"
               className="mt-8 inline-block rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium text-gray-900 hover:bg-gray-100"
@@ -163,7 +164,7 @@ export default function StaticHome() {
               <h2 id="category-heading" className="text-2xl font-bold tracking-tight text-gray-900">
                 Find Produce by Category
               </h2>
-              <Link to="/" className="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block">
+              <Link to="/" className="hidden text-sm font-semibold text-green-600 hover:text-green-500 sm:block">
                 Browse all categories
                 <span aria-hidden="true"> &rarr;</span>
               </Link>
@@ -195,10 +196,7 @@ export default function StaticHome() {
             </div>
   
             <div className="mt-6 px-4 sm:hidden">
-              <Link to="/" className="block text-sm font-semibold text-indigo-600 hover:text-indigo-500">
-                Browse all categories
-                <span aria-hidden="true"> &rarr;</span>
-              </Link>
+
             </div>
           </section>
   
@@ -258,7 +256,7 @@ export default function StaticHome() {
                     />
                   </div>
                   <h3 className="mt-4 text-base font-semibold text-gray-900">{collection.name}</h3>
-                  <p className="mt-2 text-sm text-gray-500">{collection.description}</p>
+                  <p className="mt-2 mb-2 text-sm text-gray-500">{collection.description}</p>
                 </Link>
               ))}
             </div>
@@ -355,7 +353,7 @@ export default function StaticHome() {
             </div>
   
             <div className="border-t border-gray-800 py-10">
-              <p className="text-sm text-gray-400">Copyright &copy; 2021 Your Company, Inc.</p>
+              <p className="text-sm text-gray-400">Copyright &copy; 2024 EZ Homesteading All Rights Reserved</p>
             </div>
           </div>
         </footer>

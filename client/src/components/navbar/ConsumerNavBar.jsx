@@ -10,12 +10,6 @@ const user = {
   imageUrl:
     '/images/person-circle.svg',
 }
-const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Calendar', href: '#', current: false },
-  { name: 'Teams', href: '#', current: false },
-  { name: 'Directory', href: '#', current: false },
-]
 
 const userNavigation = [
   { name: 'Your Profile', href: '#' },
@@ -180,21 +174,6 @@ export default function ConsumerNavBar() {
             </div>
 
             <Popover.Panel as="nav" className="lg:hidden" aria-label="Global">
-              <div className="mx-auto max-w-3xl space-y-1 px-2 pb-3 pt-2 sm:px-4">
-                {navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    aria-current={item.current ? 'page' : undefined}
-                    className={classNames(
-                      item.current ? 'bg-gray-100 text-gray-900' : 'hover:bg-gray-50',
-                      'block rounded-md py-2 px-3 text-base font-medium'
-                    )}
-                  >
-                    {item.name}
-                  </a>
-                ))}
-              </div>
               <div className="border-t border-gray-200 pb-3 pt-4">
                 <div className="mx-auto flex max-w-3xl items-center px-4 sm:px-6">
                   <div className="flex-shrink-0">

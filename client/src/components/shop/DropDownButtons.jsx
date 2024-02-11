@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../../styles/components/buttonDopDownStyles.css';
 // import ItemPathDisplay from '../..components/ItemPathDisplay';
 
 const categories = ['Highly Perishable', 'Perishable', 'Less Perishable', 'Non-Perishable', 'Non-Consumable', 'Self Sufficiency'];
@@ -94,7 +95,7 @@ export default function DropDownButtons() {
         <div key={index} style={{ position: 'relative', zIndex: categories.length - index }}>
           <div className="relative inline-block">
             <div className="flex-none p-2">
-              <button onClick={() => handleCategoryClick(index)} className="w-48 px-2 py-2 text-gray-700 bg-white border-2 border-white rounded-md shadow focus:outline-none focus:border-blue-600" style={{ zIndex: categories.length - index }}>
+              <button onClick={() => handleCategoryClick(index)} className="w-48 px-2 py-2 text-gray-700 lg:text-base text-xs bg-white border-2 border-white rounded-md shadow focus:outline-none focus:border-blue-600" style={{ zIndex: categories.length - index }}>
                 <span className="select-none">{category}</span>
                 <span className={showSubcategoryOptions[index] ? "w-6 h-6 stroke-current transform rotate-180" : "w-6 h-6 stroke-current"} />
               </button>

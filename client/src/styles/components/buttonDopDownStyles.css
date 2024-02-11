@@ -1,0 +1,12 @@
+@media (max-width: 640px) {
+    button {
+      padding: 0 !important;
+      margin-top: 0 !important;
+      width: 100% !important;
+      background-color: transparent !important;
+      border: 0 !important;
+      box-shadow: none !important;
+      font-size: 10px !important;
+      
+    }
+  }

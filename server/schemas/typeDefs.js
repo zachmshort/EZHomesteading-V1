@@ -27,7 +27,7 @@ const typeDefs = `
   # Set up an Auth type to handle returning data from a profile creating or user login
   type Auth {
     token: ID!
-    profile: Profile
+    user: User
   }
 
   type Item{

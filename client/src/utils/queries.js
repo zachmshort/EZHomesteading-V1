@@ -11,18 +11,11 @@ export const QUERY_PRODUCTS = gql`
     }
   }
 `;
+// add description option
 export const QUERY_ITEMS = gql`
   query Query {
     Items {
       category
-      name
-      price
-      productPic
-      quantityType
-      shelfLife
-      stock
-      subCategory
-      units
     }
   }
 `;

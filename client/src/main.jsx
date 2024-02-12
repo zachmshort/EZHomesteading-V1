@@ -10,16 +10,16 @@ import StaticHome from "./pages/views/StaticHome";
 import App from './App';
 import Profile from './pages/user/Profile';
 import Cart from './pages/cart/Cart';
-import Login from './pages/loginRegister/Login'
-import ChooseRole from './pages/loginRegister/ChooseRole'
-import ConsumerRegister from './pages/consumer/ConsumerRegister'
+import Login from './pages/loginRegister/Login';
+import Register from './pages/loginRegister/Register';
 import CoOpRegister from './pages/coop/CoOpRegister'
-import ProducerRegister from './pages/producer/ProducerRegister'
+import ProducerRegister from './pages/producer/ProducerRegister';
 import ProfileSettings from "./pages/user/ProfileSettings";
 import OrderHistory from "./pages/cart/OrderHistory";
 import ShopEZH from './pages/views/ShopEZH';
 import CoOpStore from './pages/coop/CoOpStore.jsx';
 import CoOpSettings from './pages/coop/CoOpSettings.jsx';
+// import ChooseRole from './pages/loginRegister/ChooseRole'
 
 const router = createBrowserRouter([
   {
@@ -52,18 +52,14 @@ const router = createBrowserRouter([
       },
       {
         path: '/register',
-        element: <ChooseRole />,
+        element: <Register />,
       },
       {
-        path: '/consumer-registration',
-        element: <ConsumerRegister />,
-      },
-      {
-        path: '/co-op-registration',
+        path: '/co-op-register',
         element: <CoOpRegister />,
       },
       {
-        path: '/producer-registration',
+        path: '/producer-register',
         element: <ProducerRegister />,
       },
       {
@@ -78,6 +74,10 @@ const router = createBrowserRouter([
         path: '/shop-ezh',
         element: <ShopEZH />,
       },
+      // {
+      //   path: '/',
+      //   element: < />,
+      // },
     ],
   },
 ]);

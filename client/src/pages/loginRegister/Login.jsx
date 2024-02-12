@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom';
-import ConsumerNavBar from '../../components/navbar/ConsumerNavBar';
+import { Link } from "react-router-dom";
+import ConsumerNavBar from "../../components/navbar/ConsumerNavBar";
 
 export default function Login() {
   return (
     <>
-    <ConsumerNavBar/>
+      <ConsumerNavBar />
       {/*
         This example requires updating your template:
 
@@ -16,7 +16,7 @@ export default function Login() {
       <div className="flex min-h-full flex-1 flex-col justify-center py-12 sm:px-6 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <h2 className="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-            Sign In 
+            Sign In
           </h2>
         </div>
 
@@ -24,7 +24,10 @@ export default function Login() {
           <div className="bg-white px-6 py-12 shadow sm:rounded-lg sm:px-12">
             <form className="space-y-6" action="#" method="POST">
               <div>
-                <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium leading-6 text-gray-900"
+                >
                   Email address
                 </label>
                 <div className="mt-2">
@@ -40,7 +43,10 @@ export default function Login() {
               </div>
 
               <div>
-                <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium leading-6 text-gray-900"
+                >
                   Password
                 </label>
                 <div className="mt-2">
@@ -63,13 +69,19 @@ export default function Login() {
                     type="checkbox"
                     className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
                   />
-                  <label htmlFor="remember-me" className="ml-3 block text-sm leading-6 text-gray-900">
+                  <label
+                    htmlFor="remember-me"
+                    className="ml-3 block text-sm leading-6 text-gray-900"
+                  >
                     Remember me
                   </label>
                 </div>
 
                 <div className="text-sm leading-6">
-                  <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                  <a
+                    href="#"
+                    className="font-semibold text-indigo-600 hover:text-indigo-500"
+                  >
                     Forgot password?
                   </a>
                 </div>
@@ -87,11 +99,16 @@ export default function Login() {
 
             <div>
               <div className="relative mt-10">
-                <div className="absolute inset-0 flex items-center" aria-hidden="true">
+                <div
+                  className="absolute inset-0 flex items-center"
+                  aria-hidden="true"
+                >
                   <div className="w-full border-t border-gray-200" />
                 </div>
                 <div className="relative flex justify-center text-sm font-medium leading-6">
-                  <span className="bg-white px-6 text-gray-900">Or continue with</span>
+                  <span className="bg-white px-6 text-gray-900">
+                    Or continue with
+                  </span>
                 </div>
               </div>
 
@@ -100,7 +117,11 @@ export default function Login() {
                   href="#"
                   className="flex w-full items-center justify-center gap-3 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:ring-transparent"
                 >
-                  <svg className="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24">
+                  <svg
+                    className="h-5 w-5"
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                  >
                     <path
                       d="M12.0003 4.75C13.7703 4.75 15.3553 5.36002 16.6053 6.54998L20.0303 3.125C17.9502 1.19 15.2353 0 12.0003 0C7.31028 0 3.25527 2.69 1.28027 6.60998L5.27028 9.70498C6.21525 6.86002 8.87028 4.75 12.0003 4.75Z"
                       fill="#EA4335"
@@ -118,28 +139,49 @@ export default function Login() {
                       fill="#34A853"
                     />
                   </svg>
-                  <span className="text-sm font-semibold leading-6">Google</span>
+                  <span className="text-sm font-semibold leading-6">
+                    Google
+                  </span>
                 </a>
 
                 <a
                   href="#"
                   className="flex w-full items-center justify-center gap-3 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:ring-transparent"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="24px" height="24px"><path fill="#3F51B5" d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z"/><path fill="#FFF" d="M34.368,25H31v13h-5V25h-3v-4h3v-2.41c0.002-3.508,1.459-5.59,5.592-5.59H35v4h-2.287C31.104,17,31,17.6,31,18.723V21h4L34.368,25z"/></svg>
-                  <span className="text-sm font-semibold leading-6">Facebook</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 48 48"
+                    width="24px"
+                    height="24px"
+                  >
+                    <path
+                      fill="#3F51B5"
+                      d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z"
+                    />
+                    <path
+                      fill="#FFF"
+                      d="M34.368,25H31v13h-5V25h-3v-4h3v-2.41c0.002-3.508,1.459-5.59,5.592-5.59H35v4h-2.287C31.104,17,31,17.6,31,18.723V21h4L34.368,25z"
+                    />
+                  </svg>
+                  <span className="text-sm font-semibold leading-6">
+                    Facebook
+                  </span>
                 </a>
               </div>
             </div>
           </div>
 
           <p className="text-center text-sm leading-6 text-gray-500">
-              Don't have an account?
-              <Link to="/register" className="ml-1 font-semibold text-indigo-600 hover:text-indigo-500">
-                Register
-              </Link>
-            </p>
+            Don't have an account?
+            <Link
+              to="/register"
+              className="ml-1 font-semibold text-indigo-600 hover:text-indigo-500"
+            >
+              Register
+            </Link>
+          </p>
         </div>
       </div>
     </>
-  )
+  );
 }

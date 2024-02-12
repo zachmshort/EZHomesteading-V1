@@ -24,6 +24,12 @@ const typeDefs = `
     userType : String
   }
 
+  # Set up an Auth type to handle returning data from a profile creating or user login
+  type Auth {
+    token: ID!
+    profile: Profile
+  }
+
   type Item{
     _id: ID
     name: String
@@ -54,6 +60,7 @@ const typeDefs = `
     addProductItem(userId: String!, itemId: String!, userProducts: [String]!): User
     deleteProductItem(userId: String!, itemId: String!): User
     addUser(username: String!, password: String!, email: String!): User
+    login(email: String!, password: String!): User
     updateUser(userId: ID!, profilePic: String!, username: String!, password: String!, email: String!, address: String!, hoursOfOperation: String!, userType: String!): User
     deleteUser(userId: ID!): User
     addItem(name: String!, category: String!, subCategory: String!, quantityType: String!, stock: Int!, shelfLife: Int, price: Float!, userId: String!): Item

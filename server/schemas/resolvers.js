@@ -1,4 +1,5 @@
 const { Item, Product, User } = require("../models");
+const { signToken, AuthenticationError } = require("../utils/auth");
 
 const resolvers = {
   Query: {
@@ -77,7 +78,29 @@ const resolvers = {
     //add user
     addUser: async (parent, { username, password, email }) => {
       //need to pass user.username, user.password, and user.email
-      return User.create({ username, password, email });
+      const user = User.create({ username, password, email });
+
+      const token = signToken(user);
+
+      return { token, user };
+    },
+
+    //login, isCorrectPassword method is on the User model
+    login: async (parent, { email, password }) => {
+      const user = await User.findOne({ email });
+
+      if (!user) {
+        throw AuthenticationError;
+      }
+
+      const correctPw = await user.isCorrectPassword(password);
+
+      if (!correctPw) {
+        throw AuthenticationError;
+      }
+
+      const token = signToken(user);
+      return { token, user };
     },
 
     //update a user

@@ -19,6 +19,7 @@ import OrderHistory from "./pages/cart/OrderHistory";
 import ShopEZH from './pages/views/ShopEZH';
 import CoOpStore from './pages/coop/CoOpStore.jsx';
 import CoOpSettings from './pages/coop/CoOpSettings.jsx';
+import AddProduct from './pages/coop/AddProduct.jsx';
 // import ChooseRole from './pages/loginRegister/ChooseRole'
 
 const router = createBrowserRouter([
@@ -73,6 +74,10 @@ const router = createBrowserRouter([
       {
         path: '/shop-ezh',
         element: <ShopEZH />,
+      },
+      {
+        path: '/add-product',
+        element: <AddProduct />,
       },
       // {
       //   path: '/',

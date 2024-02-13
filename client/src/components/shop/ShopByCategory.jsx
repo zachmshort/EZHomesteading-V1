@@ -62,28 +62,27 @@ export default function ShopByCategory() {
                             className={`group relative flex flex-col items-center gap-2 rounded-lg p-2 text-xs leading-5 hover:bg-gray-50 ${
                               selectedCategory === category ? "bg-gray-200" : ""
                             }`}
+                            onClick={() => {
+                              setSelectedCategory(category);
+                            }}
                           >
                             <div>
                               <a
                                 href="#"
                                 className="font-semibold text-gray-900"
-                                onClick={() => {
-                                  setSelectedCategory(category);
-                                }}
                               >
                                 {category}
                               </a>
                             </div>
                           </div>
                         ))}
-                        <div className="group relative flex flex-col items-center gap-2 rounded-lg p-2 text-xs leading-5 hover:bg-gray-50">
-                          <a
-                            href="#"
-                            className="font-semibold text-gray-900"
-                            onClick={() => {
-                              setSelectedCategory(null);
-                            }}
-                          >
+                        <div
+                          className="group relative flex flex-col items-center gap-2 rounded-lg p-2 text-xs leading-5 hover:bg-gray-50"
+                          onClick={() => {
+                            setSelectedCategory(null);
+                          }}
+                        >
+                          <a href="#" className="font-semibold text-gray-900">
                             View All
                           </a>
                         </div>

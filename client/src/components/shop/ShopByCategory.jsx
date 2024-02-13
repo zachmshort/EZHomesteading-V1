@@ -93,7 +93,9 @@ export default function ShopByCategory() {
                   key={product.name}
                   productName={product.name}
                   price={product.price}
-                  imageUrl={product.productPic}
+                  imageUrl={
+                    "../../../public/images/productImages/" + product.productPic
+                  }
                   shelfLife={product.shelfLife}
                 />
               );
@@ -104,7 +106,9 @@ export default function ShopByCategory() {
                   key={product.name}
                   productName={product.name}
                   price={product.price}
-                  imageUrl={product.productPic}
+                  imageUrl={
+                    "../../../public/images/productImages/" + product.productPic
+                  }
                   shelfLife={product.shelfLife}
                 />
               );

@@ -1,3 +1,5 @@
+import { gql } from "@apollo/client";
+
 export const ADD_TO_CART = gql`
   mutation Mutation($userId: String!, $itemId: String!, $cart: [String]!) {
     addCartItem(userId: $userId, itemId: $itemId, cart: $cart) {

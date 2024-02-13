@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const user = {
   imageUrl:
-    '/images/person-circle.svg',
+    '/images/svg/person-circle.svg',
 }
 
 const userNavigation = [
@@ -54,7 +54,7 @@ export default function CoOpNavBar() {
                     <Link to="/">
                       <img
                         className="h-12 w-auto"
-                        src="/images/ezh-logo-no-text.png"
+                        src="/images/navbar-images/ezh-logo-no-text.png"
                         alt="Your Company"
                       />
                     </Link>
@@ -144,7 +144,7 @@ export default function CoOpNavBar() {
                       <Menu.Button className="relative flex rounded-full bg-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
                         <span className="absolute -inset-1.5" />
                         <span className="sr-only">Open user menu</span>
-                        <img className="h-8 w-8 sqaure-full" src="/images/basket.svg" alt="" />
+                        <img className="h-8 w-8 sqaure-full" src="/images/svg/basket.svg" alt="" />
                       </Menu.Button>
                     </div>
                     <Transition
@@ -179,7 +179,7 @@ export default function CoOpNavBar() {
                       <Menu.Button className="relative flex rounded-full bg-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
                         <span className="absolute -inset-1.5" />
                         <span className="sr-only">Open user menu</span>
-                        <img className="h-8 w-8 square-full" src='/images/shop.svg' alt="" />
+                        <img className="h-8 w-8 square-full" src='/images/svg/shop.svg' alt="" />
                       </Menu.Button>
                     </div>
                     <Transition

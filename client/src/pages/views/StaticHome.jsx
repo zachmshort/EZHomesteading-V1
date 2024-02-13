@@ -8,27 +8,27 @@ const categories = [
   {
     name: 'Highly Perishable',
     href: '/',
-    imageSrc: '/images/milk.jpg',
+    imageSrc: '/images/home-images/milk.jpg',
   },
   {
     name: 'Perishable',
     href: '/',
-    imageSrc: '/images/apple.jpg',
+    imageSrc: '/images/home-images/apple.jpg',
   },
   {
     name: 'Less Perishable',
     href: '/',
-    imageSrc: '/images/potato.jpg',
+    imageSrc: '/images/home-images/potato.jpg',
   },
   {
     name: 'Non-Perishable',
     href: '/',
-    imageSrc: '/images/honey.jpg',
+    imageSrc: '/images/home-images/honey.jpg',
   },
   {
     name: 'Non-Consumable',
     href: '/',
-    imageSrc: '/images/candle.jpg',
+    imageSrc: '/images/home-images/candle.jpg',
   }, 
 ]
 
@@ -36,42 +36,42 @@ const collections = [
   {
     name: '',
     href: '/',
-    imageSrc: '/images/how-ezh-works-1.jpg',
+    imageSrc: '/images/how-ezh-works/how-ezh-works-1.jpg',
     imageAlt: '',
     description: 'This is Edward. He is a hard-working electritian, but ever since he was a child he has loved growing tomatoes. But he always has too many at the end of a harvest for just himself!',
   },
   {
     name: '',
     href: '/',
-    imageSrc: '/images/how-ezh-works-2.jpg',
+    imageSrc: '/images/how-ezh-works/how-ezh-works-2.jpg',
     imageAlt: '',
     description: 'Instead of letting those fresh organic tomatoes go to waste, Edward uses EZ Homesteading to list hs excess tomatoes for sale.',
   },
   {
     name: '',
     href: '/',
-    imageSrc: '/images/how-ezh-works-3.jpg',
+    imageSrc: '/images/how-ezh-works/how-ezh-works-3.jpg',
     imageAlt: '',
     description: 'Edward puts his tomatoes that he has sold on EZ Homesteading out for his consumers to come by and pick up.',
   },
   {
     name: '',
     href: '/',
-    imageSrc: '/images/how-ezh-works-4.jpg',
+    imageSrc: '/images/how-ezh-works/how-ezh-works-4.jpg',
     imageAlt: '',
     description: 'This is Bella, she is having a dinner party soon and would love some truly organic fresh tomatoes, but doesnt have the time to grow them herself. So she goes on EZ Homesteading and discovers Edwards Co-Op is right around the corner!',
   },
   {
     name: '',
     href: '/',
-    imageSrc: '/images/how-ezh-works-5.jpg',
+    imageSrc: '/images/how-ezh-works/how-ezh-works-5.jpg',
     imageAlt: '',
     description: 'Edward and Bella agree on a price, and Bella swings by Edwards Co-Op on the way home from work! They never have to see eachother or exchange cash if they do not want to.',
   },
   {
     name: '',
     href: '/',
-    imageSrc: '/images/how-ezh-works-6.jpg',
+    imageSrc: '/images/how-ezh-works/how-ezh-works-6.jpg',
     imageAlt: '',
     description: 'Both Edward and Bella are thrilled! Edward made money instead of letting his excess tomatoes go to waste. And Bella got truly fresh organic tomatoes grown by a gardener who cares about how his produce is grown.',
   },
@@ -125,7 +125,7 @@ export default function StaticHome() {
           <div className="absolute inset-0 overflow-hidden">
           <div className="absolute inset-0 bg-gray-900 opacity-50" />
             <img
-              src="/images/ezh-home-static-bg.jpg"
+              src="/images/home-images/ezh-home-static-bg.jpg"
               alt=""
               className="h-full w-full object-cover object-center"
             />
@@ -208,7 +208,7 @@ export default function StaticHome() {
             <div className="relative overflow-hidden rounded-lg">
               <div className="absolute inset-0">
                 <img
-                  src="/images/become-a-co-op.jpg"
+                  src="/images/home-images/become-a-co-op.jpg"
                   alt=""
                   className="h-full w-full object-cover object-center"
                 />

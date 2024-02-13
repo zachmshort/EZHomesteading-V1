@@ -14,6 +14,7 @@
 */
 import { Disclosure } from '@headlessui/react'
 import { LockClosedIcon } from '@heroicons/react/20/solid'
+import CoOpNavBar from '../../components/navbar/CoOpNavBar';
 
 const subtotal = '$210.00'
 const discount = { code: 'CHEAPSKATE', amount: '$24.00' }
@@ -47,6 +48,7 @@ export default function Example() {
         ```
       */}
       <main className="lg:flex lg:min-h-full lg:flex-row-reverse lg:overflow-hidden">
+        <CoOpNavBar />
         <div className="px-4 py-6 sm:px-6 lg:hidden">
           <div className="mx-auto flex max-w-lg">
             <a href="#">

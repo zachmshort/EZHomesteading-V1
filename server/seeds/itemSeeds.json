@@ -8,7 +8,7 @@
     "stock": 20,
     "shelfLife": 21,
     "price": 0.5,
-    "productPic": "",
+    "productPic": "carrot.jpg",
     "userId": "65c6b662d0b2ba2396db2913"
   },
   {
@@ -20,19 +20,19 @@
     "shelfLife": 7,
     "price": 0.25,
     "quantityType": "EA",
-    "productPic": "",
+    "productPic": "grannySmith.jpg",
     "userId": "65c6b662d0b2ba2396db2913"
   },
   {
     "_id": "65c6b50daca472f50c555024",
     "name": "Romaine Lettuce",
-    "category": "Vergetable",
+    "category": "Vegetable",
     "subCategory": "Lettuce",
     "stock": 20,
     "shelfLife": 3,
     "price": 1.0,
     "quantityType": "EA",
-    "productPic": "",
+    "productPic": "romaine.jpg",
     "userId": "65c6b662d0b2ba2396db2913"
   },
   {
@@ -44,7 +44,7 @@
     "shelfLife": 3,
     "price": 1.0,
     "quantityType": "OZ",
-    "productPic": "",
+    "productPic": "basil.jpg",
     "userId": "65c6b662d0b2ba2396db2913"
   },
   {
@@ -56,7 +56,7 @@
     "shelfLife": 7,
     "price": 1.25,
     "quantityType": "OZ",
-    "productPic": "",
+    "productPic": "greenBeans.jpg",
     "userId": "65c6b662d0b2ba2396db2913"
   },
   {
@@ -68,7 +68,7 @@
     "shelfLife": 7,
     "price": 1.0,
     "quantityType": "EA",
-    "productPic": "",
+    "productPic": "broccoli.jpg",
     "userId": "65c6b662d0b2ba2396db2913"
   },
   {
@@ -80,7 +80,7 @@
     "shelfLife": 7,
     "price": 4.0,
     "quantityType": "Lb",
-    "productPic": "",
+    "productPic": "pintoBeans.jpg",
     "userId": "65c6b662d0b2ba2396db2913"
   },
   {
@@ -92,7 +92,7 @@
     "shelfLife": 7,
     "price": 0.25,
     "quantityType": "EA",
-    "productPic": "",
+    "productPic": "pumpkin.jpg",
     "userId": "65c6b662d0b2ba2396db2913"
   },
   {
@@ -104,7 +104,7 @@
     "shelfLife": 7,
     "price": 0.5,
     "quantityType": "EA",
-    "productPic": "",
+    "productPic": "bellPepper.jpg",
     "userId": "65c6b662d0b2ba2396db2913"
   },
   {
@@ -116,7 +116,7 @@
     "shelfLife": 7,
     "price": 0.5,
     "quantityType": "EA",
-    "productPic": "",
+    "productPic": "ghostPepper.jpg",
     "userId": "65c6b662d0b2ba2396db2913"
   },
   {
@@ -128,7 +128,7 @@
     "shelfLife": 7,
     "price": 0.5,
     "quantityType": "EA",
-    "productPic": "",
+    "productPic": "habanero.jpg",
     "userId": "65c6b662d0b2ba2396db2913"
   },
   {
@@ -140,7 +140,7 @@
     "shelfLife": 7,
     "price": 0.5,
     "quantityType": "EA",
-    "productPic": "",
+    "productPic": "jalapeno.jpg",
     "userId": "65c6b662d0b2ba2396db2913"
   }
 ]

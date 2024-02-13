@@ -72,6 +72,26 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const LOGIN = gql`
+  mutation Mutation($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
+      token
+      _id
+      address
+      cart
+      email
+      hoursOfOperation
+      password
+      profilePic
+      transactionHistory
+      userProducts
+      userType
+      username
+    }
+  }
+`;
+
 export const DELETE_FROM_CART = gql`
   mutation Mutation($userId: String!, $itemId: String!) {
     deleteCartItem(userId: $userId, itemId: $itemId) {

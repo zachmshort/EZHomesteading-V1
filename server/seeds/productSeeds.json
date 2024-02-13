@@ -7,17 +7,17 @@
     "shelfLife": 7,
     "suggestPrice": 0.25,
     "suggestedUnits": "EA",
-    "productPic": ""
+    "productPic": "grannySmith.jpg"
   },
   {
     "_id": "65c6b662d0b2ba2396db28fe",
     "name": "Romaine Lettuce",
-    "category": "Vergetable",
+    "category": "Vegetable",
     "subCategory": "Lettuce",
     "shelfLife": 3,
     "suggestPrice": 1.0,
     "suggestedUnits": "EA",
-    "productPic": ""
+    "productPic": "romaine.jpg"
   },
   {
     "_id": "65c6b662d0b2ba2396db2901",
@@ -27,7 +27,7 @@
     "shelfLife": 3,
     "suggestPrice": 1.0,
     "suggestedUnits": "OZ",
-    "productPic": ""
+    "productPic": "basil.jpg"
   },
   {
     "_id": "65c6b662d0b2ba2396db2904",
@@ -37,7 +37,7 @@
     "shelfLife": 7,
     "suggestPrice": 1.25,
     "suggestedUnits": "OZ",
-    "productPic": ""
+    "productPic": "greenBeans.jpg"
   },
   {
     "_id": "65c6b662d0b2ba2396db2902",
@@ -47,7 +47,7 @@
     "shelfLife": 7,
     "suggestPrice": 1,
     "suggestedUnits": "EA",
-    "productPic": ""
+    "productPic": "broccoli.jpg"
   },
   {
     "_id": "65c6b662d0b2ba2396db2900",
@@ -57,7 +57,7 @@
     "shelfLife": 7,
     "suggestPrice": 4.0,
     "suggestedUnits": "Lb",
-    "productPic": ""
+    "productPic": "pintoBeans.jpg"
   },
   {
     "_id": "65c6b662d0b2ba2396db2903",
@@ -67,7 +67,7 @@
     "shelfLife": 7,
     "suggestPrice": 0.25,
     "suggestedUnits": "EA",
-    "productPic": ""
+    "productPic": "pumpkin.jpg"
   },
   {
     "_id": "65c6b662d0b2ba2396db28ff",
@@ -77,7 +77,7 @@
     "shelfLife": 7,
     "suggestPrice": 0.5,
     "suggestedUnits": "EA",
-    "productPic": ""
+    "productPic": "bellPepper.jpg"
   },
   {
     "_id": "65c6b662d0b2ba2396db2905",
@@ -87,7 +87,7 @@
     "shelfLife": 7,
     "suggestPrice": 0.5,
     "suggestedUnits": "EA",
-    "productPic": ""
+    "productPic": "ghostPepper.jpg"
   },
   {
     "_id": "65c6b662d0b2ba2396db2906",
@@ -97,7 +97,7 @@
     "shelfLife": 7,
     "suggestPrice": 0.5,
     "suggestedUnits": "EA",
-    "productPic": ""
+    "productPic": "habanero.jpg"
   },
   {
     "_id": "65c6b662d0b2ba2396db2907",
@@ -107,6 +107,6 @@
     "shelfLife": 7,
     "suggestPrice": 0.5,
     "suggestedUnits": "EA",
-    "productPic": ""
+    "productPic": "jalapeno.jpg"
   }
 ]

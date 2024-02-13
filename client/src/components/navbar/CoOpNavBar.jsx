@@ -6,7 +6,6 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link } from 'react-router-dom';
 
 const user = {
-
   imageUrl:
     '/images/person-circle.svg',
 }
@@ -17,10 +16,16 @@ const userNavigation = [
   { name: 'Sign out', href: '/' },
 ]
 
+const cartNavigation = [
+  { name: 'View Cart', href: '/cart' },
+  { name: 'Order History', href: '/order-history' },
+  { name: 'Find Produce', href: '/shop-ezh' },
+]
+
 const shopNavigation = [
   { name: 'My Co-Op', href: '/co-op-store' },
   { name: 'Co-Op Settings', href: '/co-op-settings' },
-  { name: '', href: '/' },
+  { name: 'Sell A Product', href: '/add-product' },
 ]
 
 function classNames(...classes) {
@@ -152,7 +157,7 @@ export default function CoOpNavBar() {
                       leaveTo="transform opacity-0 scale-95"
                     >
                       <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                        {userNavigation.map((item) => (
+                        {cartNavigation.map((item) => (
                           <Menu.Item key={item.name}>
                             {({ active }) => (
                               <Link to={item.href}

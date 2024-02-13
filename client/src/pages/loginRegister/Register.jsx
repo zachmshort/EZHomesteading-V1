@@ -2,13 +2,44 @@ import { Link } from "react-router-dom";
 import CoOpNavBar from "../../components/navbar/CoOpNavBar";
 
 import { useMutation } from "@apollo/client";
+import { useState } from "react";
 import { ADD_USER } from "../../utils/mutations";
 
 import Auth from "../../utils/auth";
 
-const Signup = () => {};
+const Signup = () => {
+  const [formState, setFormState] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+  const [addUser, { error, data }] = useMutation(ADD_USER);
 
-export default function ConsumerRegister() {
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  // submit form
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formState);
+
+    try {
+      const { data } = await addUser({
+        variables: { ...formState },
+      });
+
+      Auth.login(data.addUser.token);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
     <>
       <CoOpNavBar />
@@ -21,71 +52,113 @@ export default function ConsumerRegister() {
           </div>
           <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
             <div className="bg-white px-6 py-12 shadow sm:rounded-lg sm:px-12">
-              <form className="space-y-6" action="#" method="POST">
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium leading-6 text-gray-900"
-                  >
-                    Email address
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      autoComplete="email"
-                      required
-                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
+              {data ? (
+                <p>
+                  Success! You may now head{" "}
+                  <Link to="/">back to the homepage.</Link>
+                </p>
+              ) : (
+                <form
+                  className="space-y-6"
+                  action="#"
+                  method="POST"
+                  onSubmit={handleFormSubmit}
+                >
+                  <div>
+                    <label
+                      htmlFor="username"
+                      className="block text-sm font-medium leading-6 text-gray-900"
+                    >
+                      Username
+                    </label>
+                    <div className="mt-2">
+                      <input
+                        id="username"
+                        name="username"
+                        type="string"
+                        autoComplete="username"
+                        required
+                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        value={formState.username}
+                        onChange={handleChange}
+                      />
+                    </div>
                   </div>
-                </div>
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium leading-6 text-gray-900"
+                    >
+                      Email address
+                    </label>
+                    <div className="mt-2">
+                      <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        autoComplete="email"
+                        required
+                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        value={formState.email}
+                        onChange={handleChange}
+                      />
+                    </div>
+                  </div>
 
-                <div>
-                  <label
-                    htmlFor="password"
-                    className="block text-sm font-medium leading-6 text-gray-900"
-                  >
-                    Password
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      id="password"
-                      name="password"
-                      type="password"
-                      autoComplete="current-password"
-                      required
-                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
+                  <div>
+                    <label
+                      htmlFor="password"
+                      className="block text-sm font-medium leading-6 text-gray-900"
+                    >
+                      Password
+                    </label>
+                    <div className="mt-2">
+                      <input
+                        id="password"
+                        name="password"
+                        type="password"
+                        autoComplete="current-password"
+                        required
+                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        value={formState.password}
+                        onChange={handleChange}
+                      />
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <label
-                    htmlFor="password"
-                    className="block text-sm font-medium leading-6 text-gray-900"
-                  >
-                    Confirm Password
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      id="confirmPassword"
-                      name="confirmPassword"
-                      type="password"
-                      autoComplete="current-password"
-                      required
-                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
+                  <div>
+                    <label
+                      htmlFor="password"
+                      className="block text-sm font-medium leading-6 text-gray-900"
+                    >
+                      Confirm Password
+                    </label>
+                    <div className="mt-2">
+                      <input
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        type="password"
+                        autoComplete="current-password"
+                        required
+                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      />
+                    </div>
                   </div>
+                  <div>
+                    <button
+                      type="submit"
+                      className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    >
+                      Register
+                    </button>
+                  </div>
+                </form>
+              )}
+
+              {error && (
+                <div className="my-3 p-3 bg-danger text-white">
+                  {error.message}
                 </div>
-                <div>
-                  <button
-                    type="submit"
-                    className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                  >
-                    Register
-                  </button>
-                </div>
-              </form>
+              )}
 
               <div>
                 <div className="relative mt-10">
@@ -175,4 +248,6 @@ export default function ConsumerRegister() {
       </div>
     </>
   );
-}
+};
+
+export default Signup;

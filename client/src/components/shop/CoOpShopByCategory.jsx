@@ -1,7 +1,7 @@
 import React from "react";
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
-import ProductCard from "../../components/shop/ProductCard";
+import ProductCard from "./ProductCard";
 import { useState, useEffect } from "react";
 import "../../styles/components/ShopByCategoryStyles.css";
 import { useQuery } from "@apollo/client";

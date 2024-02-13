@@ -1,9 +1,9 @@
 import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
 
 const stats = [
-  { id: 1, name: 'Sold', value: '44' },
-  { id: 2, name: 'Revenue', value: '$1,199' },
-  { id: 3, name: 'Positive Reviews', value: '40' },
+  { id: 1, name: 'Sold', value: '0' },
+  { id: 2, name: 'Revenue', value: '$0' },
+  { id: 3, name: 'Positive Reviews', value: '0' },
 ]
 
 export default function CoOpSettings() {
@@ -101,8 +101,8 @@ export default function CoOpSettings() {
         </div>
         <div className="border-b border-gray-900/10 pb-12">
           <h2 className="text-base font-semibold leading-7 text-gray-900">Personal Information</h2>
-          <p className="mt-1 text-sm leading-6 text-gray-600">Use a permanent address where you can receive mail.</p>
-          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+          <p className="mt-1 text-sm leading-6 text-gray-600">We will never display your address or last name.</p>
+          <div className="mt-3 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             <div className="sm:col-span-3">
               <label htmlFor="first-name" className="block text-sm font-medium leading-6 text-gray-900">
                 First name

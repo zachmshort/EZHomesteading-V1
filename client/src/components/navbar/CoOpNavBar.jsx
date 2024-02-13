@@ -1,35 +1,35 @@
-import React from 'react';
-import { Fragment } from 'react'
-import { Menu, Popover, Transition } from '@headlessui/react'
-import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Fragment } from "react";
+import { Menu, Popover, Transition } from "@headlessui/react";
+import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
+import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
 
 const user = {
-  imageUrl:
-    '/images/svg/person-circle.svg',
-}
+  imageUrl: "/images/svg/person-circle.svg",
+};
 
 const userNavigation = [
-  { name: 'Your Profile', href: '/profile' },
-  { name: 'Settings', href: '/profile-settings' },
-  { name: 'Sign out', href: '/' },
-]
+  { name: "Your Profile", href: "/profile" },
+  { name: "Settings", href: "/profile-settings" },
+  { name: "Register", href: "/register" },
+  { name: "Sign Out", href: "/" },
+];
 
 const cartNavigation = [
-  { name: 'View Cart', href: '/cart' },
-  { name: 'Order History', href: '/order-history' },
-  { name: 'Find Produce', href: '/shop-ezh' },
-]
+  { name: "View Cart", href: "/cart" },
+  { name: "Order History", href: "/order-history" },
+  { name: "Find Produce", href: "/shop-ezh" },
+];
 
 const shopNavigation = [
-  { name: 'My Co-Op', href: '/co-op-store' },
-  { name: 'Co-Op Settings', href: '/co-op-settings' },
-  { name: 'Sell A Product', href: '/add-product' },
-]
+  { name: "My Co-Op", href: "/co-op-store" },
+  { name: "Co-Op Settings", href: "/co-op-settings" },
+  { name: "Sell A Product", href: "/add-product" },
+];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function CoOpNavBar() {
@@ -40,8 +40,8 @@ export default function CoOpNavBar() {
         as="header"
         className={({ open }) =>
           classNames(
-            open ? 'fixed inset-0 z-40 overflow-y-auto' : '',
-            'bg-white shadow-sm lg:static lg:overflow-y-visible'
+            open ? "fixed inset-0 z-40 overflow-y-auto" : "",
+            "bg-white shadow-sm lg:static lg:overflow-y-visible"
           )
         }
       >
@@ -68,7 +68,10 @@ export default function CoOpNavBar() {
                       </label>
                       <div className="relative">
                         <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                          <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
+                          <MagnifyingGlassIcon
+                            className="h-5 w-5 text-gray-400"
+                            aria-hidden="true"
+                          />
                         </div>
                         <input
                           id="search"
@@ -109,7 +112,11 @@ export default function CoOpNavBar() {
                       <Menu.Button className="relative flex rounded-full bg-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
                         <span className="absolute -inset-1.5" />
                         <span className="sr-only">Open user menu</span>
-                        <img className="h-8 w-8 rounded-full" src={user.imageUrl} alt="" />
+                        <img
+                          className="h-8 w-8 rounded-full"
+                          src={user.imageUrl}
+                          alt=""
+                        />
                       </Menu.Button>
                     </div>
                     <Transition
@@ -125,10 +132,11 @@ export default function CoOpNavBar() {
                         {userNavigation.map((item) => (
                           <Menu.Item key={item.name}>
                             {({ active }) => (
-                              <Link to={item.href}
+                              <Link
+                                to={item.href}
                                 className={classNames(
-                                  active ? 'bg-gray-100' : '',
-                                  'block px-4 py-2 text-sm text-gray-700'
+                                  active ? "bg-gray-100" : "",
+                                  "block px-4 py-2 text-sm text-gray-700"
                                 )}
                               >
                                 {item.name}
@@ -144,7 +152,11 @@ export default function CoOpNavBar() {
                       <Menu.Button className="relative flex rounded-full bg-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
                         <span className="absolute -inset-1.5" />
                         <span className="sr-only">Open user menu</span>
-                        <img className="h-8 w-8 sqaure-full" src="/images/svg/basket.svg" alt="" />
+                        <img
+                          className="h-8 w-8 sqaure-full"
+                          src="/images/svg/basket.svg"
+                          alt=""
+                        />
                       </Menu.Button>
                     </div>
                     <Transition
@@ -160,10 +172,11 @@ export default function CoOpNavBar() {
                         {cartNavigation.map((item) => (
                           <Menu.Item key={item.name}>
                             {({ active }) => (
-                              <Link to={item.href}
+                              <Link
+                                to={item.href}
                                 className={classNames(
-                                  active ? 'bg-gray-100' : '',
-                                  'block px-4 py-2 text-sm text-gray-700'
+                                  active ? "bg-gray-100" : "",
+                                  "block px-4 py-2 text-sm text-gray-700"
                                 )}
                               >
                                 {item.name}
@@ -179,7 +192,11 @@ export default function CoOpNavBar() {
                       <Menu.Button className="relative flex rounded-full bg-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
                         <span className="absolute -inset-1.5" />
                         <span className="sr-only">Open user menu</span>
-                        <img className="h-8 w-8 square-full" src='/images/svg/shop.svg' alt="" />
+                        <img
+                          className="h-8 w-8 square-full"
+                          src="/images/svg/shop.svg"
+                          alt=""
+                        />
                       </Menu.Button>
                     </div>
                     <Transition
@@ -195,10 +212,11 @@ export default function CoOpNavBar() {
                         {shopNavigation.map((item) => (
                           <Menu.Item key={item.name}>
                             {({ active }) => (
-                              <Link to={item.href}
+                              <Link
+                                to={item.href}
                                 className={classNames(
-                                  active ? 'bg-gray-100' : '',
-                                  'block px-4 py-2 text-sm text-gray-700'
+                                  active ? "bg-gray-100" : "",
+                                  "block px-4 py-2 text-sm text-gray-700"
                                 )}
                               >
                                 {item.name}
@@ -217,11 +235,19 @@ export default function CoOpNavBar() {
               <div className="border-t border-gray-200 pb-3 pt-4">
                 <div className="mx-auto flex max-w-3xl items-center px-4 sm:px-6">
                   <div className="flex-shrink-0">
-                    <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt="" />
+                    <img
+                      className="h-10 w-10 rounded-full"
+                      src={user.imageUrl}
+                      alt=""
+                    />
                   </div>
                   <div className="ml-3">
-                    <div className="text-base font-medium text-gray-800">{user.name}</div>
-                    <div className="text-sm font-medium text-gray-500">{user.email}</div>
+                    <div className="text-base font-medium text-gray-800">
+                      {user.name}
+                    </div>
+                    <div className="text-sm font-medium text-gray-500">
+                      {user.email}
+                    </div>
                   </div>
                   <button
                     type="button"
@@ -234,7 +260,8 @@ export default function CoOpNavBar() {
                 </div>
                 <div className="mx-auto mt-3 max-w-3xl space-y-1 px-2 sm:px-4">
                   {userNavigation.map((item) => (
-                    <Link to={item.href}
+                    <Link
+                      to={item.href}
                       key={item.name}
                       className="block rounded-md px-3 py-2 text-base font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900"
                     >
@@ -248,5 +275,5 @@ export default function CoOpNavBar() {
         )}
       </Popover>
     </>
-  )
+  );
 }

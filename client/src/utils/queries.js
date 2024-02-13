@@ -15,7 +15,11 @@ export const QUERY_PRODUCTS = gql`
 export const QUERY_ITEMS = gql`
   query Query {
     Items {
+      name
       category
+      price
+      productPic
+      shelfLife
     }
   }
 `;

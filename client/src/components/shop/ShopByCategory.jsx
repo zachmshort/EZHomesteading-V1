@@ -13,18 +13,16 @@ export default function ShopByCategory() {
   const [categoryArray, setCategoryArray] = useState([]);
 
   const { loading, data } = useQuery(QUERY_ITEMS);
-
   useEffect(() => {
-    console.log(loading);
-
     const mapCat = async () => {
       let categoryArg = [];
       let dataConv = await dataConvenience.map((data) => {
         categoryArg.push(data.category);
-        return dataConv;
+        return categoryArg;
       });
-      setCategoryArray(categoryArg);
-      console.log(categoryArg);
+
+      let categoryArr = [...new Set(categoryArg)];
+      setCategoryArray(categoryArr);
     };
 
     if (!loading) {
@@ -32,7 +30,7 @@ export default function ShopByCategory() {
       setDataConvenience(setData);
       mapCat();
     }
-  }, [loading, data]);
+  }, [loading, data, dataConvenience]);
 
   return (
     <div>

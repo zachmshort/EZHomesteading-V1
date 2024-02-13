@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import ConsumerNavBar from "../../components/navbar/ConsumerNavBar";
+import CoOpNavBar from "../../components/navbar/CoOpNavBar";
 
 export default function Login() {
   return (
     <>
-      <ConsumerNavBar />
+      <CoOpNavBar />
       {/*
         This example requires updating your template:
 

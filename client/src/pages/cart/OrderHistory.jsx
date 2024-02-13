@@ -1,4 +1,4 @@
-import ConsumerNavBar from '../../components/navbar/ConsumerNavBar';
+import CoOpNavBar from '../../components/navbar/CoOpNavBar';
 
 const orders = [
     {
@@ -26,7 +26,7 @@ const orders = [
   export default function OrderHistory() {
     return (
       <>
-      <ConsumerNavBar />
+      <CoOpNavBar />
       <div className="bg-white">
         <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-24">
           <div className="max-w-xl">

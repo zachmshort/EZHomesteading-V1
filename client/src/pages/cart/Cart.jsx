@@ -1,5 +1,4 @@
-import ConsumerNavBar from '../../components/navbar/ConsumerNavBar';
-import { Fragment, useState } from 'react'
+import CoOpNavBar from '../../components/navbar/CoOpNavBar';import { Fragment, useState } from 'react'
 import { Dialog, Tab, Transition } from '@headlessui/react'
 import { XMarkIcon as XMarkIconOutline } from '@heroicons/react/24/outline'
 import { CheckIcon, ClockIcon, QuestionMarkCircleIcon, XMarkIcon as XMarkIconMini } from '@heroicons/react/20/solid'
@@ -209,7 +208,7 @@ export default function Cart() {
 
   return (
     <>
-    <ConsumerNavBar />
+    <CoOpNavBar />
     <div className="bg-white">
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>

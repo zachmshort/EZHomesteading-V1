@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import ConsumerNavBar from "../../components/navbar/ConsumerNavBar";
+import CoOpNavBar from "../../components/navbar/CoOpNavBar";
 
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../../utils/mutations";
@@ -11,7 +11,7 @@ const Signup = () => {};
 export default function ConsumerRegister() {
   return (
     <>
-      <ConsumerNavBar />
+      <CoOpNavBar />
       <div className="flex min-h-screen justify-center items-center">
         <div className="w-full max-w-md">
           <div className="sm:mx-auto sm:w-full sm:max-w-md">

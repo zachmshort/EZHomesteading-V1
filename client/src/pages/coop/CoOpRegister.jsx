@@ -1,6 +1,6 @@
 import {  useState } from "react"; //useEffect,
 import { Link } from "react-router-dom";
-import ConsumerNavBar from "../../components/navbar/ConsumerNavBar";
+import CoOpNavBar from "../../components/navbar/CoOpNavBar";
 import { ExclamationCircleIcon } from '@heroicons/react/20/solid'
 
 export default function CoOpRegister() {
@@ -42,7 +42,7 @@ export default function CoOpRegister() {
 
   return (
     <>
-      <ConsumerNavBar />
+      <CoOpNavBar />
       <div className="flex min-h-screen justify-center ">
         <div className="w-full max-w-md">
           <div className="sm:mx-auto sm:w-full sm:max-w-md">

@@ -1,11 +1,11 @@
 import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
-import ConsumerNavBar from '../../components/navbar/ConsumerNavBar';
+import CoOpNavBar from '../../components/navbar/CoOpNavBar';
 
 export default function ProfileSettings() {
   return (
     <>
     
-    <ConsumerNavBar />
+    <CoOpNavBar />
     <div className="flex justify-center items-center mt-10">
     <form className="w-1/2">
       <div className="space-y-12">

@@ -58,17 +58,19 @@ export const ADD_USER = gql`
   mutation Mutation($username: String!, $password: String!, $email: String!) {
     addUser(username: $username, password: $password, email: $email) {
       token
-      _id
-      address
-      cart
-      email
-      hoursOfOperation
-      password
-      profilePic
-      transactionHistory
-      userProducts
-      userType
-      username
+      user {
+        _id
+        address
+        cart
+        email
+        hoursOfOperation
+        password
+        profilePic
+        transactionHistory
+        userProducts
+        userType
+        username
+      }
     }
   }
 `;
@@ -77,17 +79,19 @@ export const LOGIN = gql`
   mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
       token
-      _id
-      address
-      cart
-      email
-      hoursOfOperation
-      password
-      profilePic
-      transactionHistory
-      userProducts
-      userType
-      username
+      user {
+        _id
+        address
+        cart
+        email
+        hoursOfOperation
+        password
+        profilePic
+        transactionHistory
+        userProducts
+        userType
+        username
+      }
     }
   }
 `;

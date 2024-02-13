@@ -1,7 +1,7 @@
 import { PhotoIcon } from '@heroicons/react/24/solid';
 import CoOpNavBar from '../../components/navbar/CoOpNavBar';
-// import { useState } from 'react';
-import { useAuth } from '../../utils/auth';
+import { useState } from 'react';
+// import { useAuth } from '../../utils/auth'; ????
 import { useMutation } from '@apollo/client';
 import { ADD_NEW_ITEM } from "../../utils/mutations";
 
@@ -29,6 +29,9 @@ const AddProduct = () => {
   const[quantityType, setQuantityType] = useState('');
   const[stock, setStock] = useState('');
   const[productPic, setProductPic] = useState('');
+  const[shelfLife, setshelfLife] = useState('');
+  const[price, setPrice] = useState('');
+
 
   const [addNewProduct] = useMutation(ADD_NEW_ITEM)
 
@@ -42,7 +45,9 @@ const AddProduct = () => {
           category: category,
           quantityType: quantityType,
           stock: stock,
-          productPic,
+          productPic: productPic,
+          shelfLife: shelfLife,
+          price: price,
         }
       });
       console.log('New product added', data.addNewProduct)
@@ -50,9 +55,6 @@ const AddProduct = () => {
       console.log('couldnt add product', error)
     }
   }
-}
-
-export default function AddProduct() {
 
   return (
     <>
@@ -96,26 +98,26 @@ export default function AddProduct() {
                 </select>
               </div>
               <div className="mb-4">
-                <label htmlFor="quantity" className="block text-sm font-medium leading-6 text-gray-900">
+                <label htmlFor="stock" className="block text-sm font-medium leading-6 text-gray-900">
                   Quantity
                 </label>
                 <div className="mt-2">
                   <input
                     type="number"
-                    name="quantity"
-                    id="quantity"
+                    name="stock"
+                    id="stock"
                     className="block w-full rounded-md border-0 py-1.5 pl-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
                     placeholder="5"
                   />
                 </div>
               </div>
               <div className="mb-4">
-                <label htmlFor="unit" className="block text-sm font-medium leading-6 text-gray-900">
+                <label htmlFor="quantityType" className="block text-sm font-medium leading-6 text-gray-900">
                   Unit
                 </label>
                 <select
-                  id="unit"
-                  name="unit"
+                  id="quantityType"
+                  name="quantityType"
                   required
                   className="mt-2 block pb-2.5 w-full rounded-md border-0 py-1.5 pl-1 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-green-600 sm:text-sm sm:leading-6"
                   defaultValue="lb"
@@ -150,7 +152,7 @@ export default function AddProduct() {
                 </div>
               </div>
               <div className="mb-4">
-                <label htmlFor="quantity" className="block text-sm font-medium leading-6 text-gray-900">
+                <label htmlFor="shelfLife" className="block text-sm font-medium leading-6 text-gray-900">
                   Shelf life in days
                 </label>
                 <div className="mt-2">
@@ -189,7 +191,8 @@ export default function AddProduct() {
                   className="relative cursor-pointer rounded-md bg-white font-semibold text-green-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-green-600 focus-within:ring-offset-2 hover:text-green-500"
                 >
                   <span>Upload a photo</span>
-                  <input id="productPic" name="productPic" type="file" className="sr-only" />
+                  <input id="productPic" name="productPic" type="file" className="sr-only" 
+                  accept="image/png, image/jpeg"/> 
                 </label>
                 <p className="pl-1">or drag and drop</p>
               </div>
@@ -211,3 +214,5 @@ export default function AddProduct() {
     </>
   );
 }
+
+export default AddProduct;

@@ -52,7 +52,6 @@ const login = () => {
             Sign In
           </h2>
         </div>
-
         <div className="mt-3 w-1/4">
           <div className="bg-white px-6 py-12 shadow sm:rounded-lg sm:px-12">
           {data ? (

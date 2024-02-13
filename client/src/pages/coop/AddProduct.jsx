@@ -5,19 +5,60 @@ import { useAuth } from '../../utils/auth';
 import { useMutation } from '@apollo/client';
 import { ADD_NEW_ITEM } from "../../utils/mutations";
 
+//////////////////////////////////////////////
+// pseudo code
+// need to bring in correct mutation so when data is collected
+// it can be posted (probably not right way to say it)
+// store everything in a data variable
+// wait for all the required fields to be submitted
+// upon user clicking add product...
+// append data to all items and associate it with the correct 
+// userID (probably not right way to say it)
+//////////////////////////////////////////////
+
 const AddProduct = () => {
-  const[name, setname] = useState('');
+
+// https://legacy.reactjs.org/docs/hooks-reference.html
+// const [stateVariable, setStateFunction] = useState(initialState);
+// Returns a stateful value, and a function to update it.
+// During the initial render, the returned state (state) is the same as the value passed as the first argument (initialState).
+// The setState function is used to update the state. It accepts a new state value and enqueues a re-render of the component.
+
+  const[name, setName] = useState('');
   const[category, setCategory] = useState('');
   const[quantityType, setQuantityType] = useState('');
-  const[name, setname] = useState('');
+  const[stock, setStock] = useState('');
+  const[productPic, setProductPic] = useState('');
+
+  const [addNewProduct] = useMutation(ADD_NEW_ITEM)
+
+  const handleAddProductSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const { data } = await addNewProduct ({
+        variables: {
+          name: name,
+          category: category,
+          quantityType: quantityType,
+          stock: stock,
+          productPic,
+        }
+      });
+      console.log('New product added', data.addNewProduct)
+    } catch (error) {
+      console.log('couldnt add product', error)
+    }
+  }
 }
+
 export default function AddProduct() {
 
   return (
     <>
       <CoOpNavBar />
       <div className="flex justify-center mt-5 items-center mt-2">
-        <form className="w-1/3 mt-5">
+        <form onSubmit={handleAddProductSubmit} className="w-1/3 mt-5">
           <div className="border-b m-1 border-gray-900/10">
             <div className="grid grid-cols-2 gap-6">
               <div className="mb-4">
@@ -125,7 +166,7 @@ export default function AddProduct() {
               </div>
             </div>
             <div className="col-span-full">
-              <label htmlFor="about" className="block text-sm font-medium leading-6 text-gray-900">
+              <label htmlFor="description" className="block text-sm font-medium leading-6 text-gray-900">
                 Description
               </label>
               <div className="mt-2">

@@ -13,6 +13,9 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+  phoneNumber: {
+    type: String,
+  },
   email: {
     type: String,
     required: true,
@@ -26,6 +29,8 @@ const userSchema = new Schema({
     },
   ],
   address: { type: String },
+  state: { type: String },
+  city: { type: String },
   hoursOfOperation: { type: String },
   cart: [
     {

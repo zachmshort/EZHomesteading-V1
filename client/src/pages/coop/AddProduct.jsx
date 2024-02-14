@@ -1,7 +1,7 @@
 import { PhotoIcon } from '@heroicons/react/24/solid';
 import CoOpNavBar from '../../components/navbar/CoOpNavBar';
 import { useState } from 'react';
-// import { useAuth } from '../../utils/auth'; ????
+// import { useAuth } from '../../utils/auth';
 import { useMutation } from '@apollo/client';
 import { ADD_NEW_ITEM } from "../../utils/mutations";
 
@@ -24,43 +24,47 @@ const AddProduct = () => {
 // During the initial render, the returned state (state) is the same as the value passed as the first argument (initialState).
 // The setState function is used to update the state. It accepts a new state value and enqueues a re-render of the component.
 
-  const[name, setName] = useState('');
-  const[category, setCategory] = useState('');
-  const[quantityType, setQuantityType] = useState('');
-  const[stock, setStock] = useState('');
-  const[productPic, setProductPic] = useState('');
-  const[shelfLife, setshelfLife] = useState('');
-  const[price, setPrice] = useState('');
+  const [formState, setFormState] = useState({
+    name:'',
+    category:'',
+    quantityType:'',
+    stock:null,
+    productPic:'',
+    shelfLife:null,
+    price:null,
+    username:'',
+  });
 
+  const [addProduct] = useMutation(ADD_NEW_ITEM);
 
-  const [addNewProduct] = useMutation(ADD_NEW_ITEM)
+  const handleChange = (event) => {
+  const { name, value } = event.target;
 
-  const handleAddProductSubmit = async (event) => {
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
+    console.log(formState);
 
     try {
-      const { data } = await addNewProduct ({
-        variables: {
-          name: name,
-          category: category,
-          quantityType: quantityType,
-          stock: stock,
-          productPic: productPic,
-          shelfLife: shelfLife,
-          price: price,
-        }
+      const { data } = await addProduct ({
+        variables: { ...formState },
       });
-      console.log('New product added', data.addNewProduct)
+      
     } catch (error) {
-      console.log('couldnt add product', error)
+      console.log('couldnt add product', error);
     }
-  }
+  };
 
   return (
     <>
       <CoOpNavBar />
       <div className="flex justify-center mt-5 items-center mt-2">
-        <form onSubmit={handleAddProductSubmit} className="w-1/3 mt-5">
+        <form onSubmit={handleFormSubmit} className="w-1/3 mt-5">
           <div className="border-b m-1 border-gray-900/10">
             <div className="grid grid-cols-2 gap-6">
               <div className="mb-4">
@@ -75,6 +79,8 @@ const AddProduct = () => {
                     required
                     className="block w-full rounded-md border-0 py-1.5 pl-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
                     placeholder="Tomato"
+                    value={formState.name}
+                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -88,6 +94,8 @@ const AddProduct = () => {
                   required
                   className="mt-2 block w-full pb-2.5 rounded-md border-0 py-1.5 pl-1 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-green-600 sm:text-sm sm:leading-6"
                   defaultValue="Vegetable"
+                  value={formState.category}
+                  onChange={handleChange}
                 >
                   <option>Fruit</option>
                   <option>Vegetable</option>
@@ -108,6 +116,8 @@ const AddProduct = () => {
                     id="stock"
                     className="block w-full rounded-md border-0 py-1.5 pl-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
                     placeholder="5"
+                    value={formState.stock}
+                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -121,6 +131,8 @@ const AddProduct = () => {
                   required
                   className="mt-2 block pb-2.5 w-full rounded-md border-0 py-1.5 pl-1 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-green-600 sm:text-sm sm:leading-6"
                   defaultValue="lb"
+                  value={formState.quantityType}
+                  onChange={handleChange}
                 >
                   <option>lb</option>
                   <option>kg</option>
@@ -143,6 +155,8 @@ const AddProduct = () => {
                     className="block w-full rounded-md border-0 py-1.5 pl-7 pr-12 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
                     placeholder="1"
                     aria-describedby="price-currency"
+                    value={formState.price}
+                    onChange={handleChange}
                   />
                   <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
                     <span className="text-gray-500 sm:text-sm" id="price-currency">
@@ -153,7 +167,7 @@ const AddProduct = () => {
               </div>
               <div className="mb-4">
                 <label htmlFor="shelfLife" className="block text-sm font-medium leading-6 text-gray-900">
-                  Shelf life in days
+                  Days until expiration
                 </label>
                 <div className="mt-2">
                   <input
@@ -163,6 +177,8 @@ const AddProduct = () => {
                     required
                     className="block w-full rounded-md pb-1.5 border-0 py-1.5 pl-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
                     placeholder="6 days"
+                    value={formState.shelfLife}
+                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -192,7 +208,9 @@ const AddProduct = () => {
                 >
                   <span>Upload a photo</span>
                   <input id="productPic" name="productPic" type="file" className="sr-only" 
-                  accept="image/png, image/jpeg"/> 
+                  accept="image/png, image/jpeg" 
+                  value={formState.imagePic}
+                  onChange={handleChange}/> 
                 </label>
                 <p className="pl-1">or drag and drop</p>
               </div>

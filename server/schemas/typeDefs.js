@@ -22,6 +22,9 @@ const typeDefs = `
     cart : [String]
     transactionHistory : [String]
     userType : String
+    phoneNumber: String
+    city: String
+    state: String
   }
 
   # Set up an Auth type to handle returning data from a profile creating or user login

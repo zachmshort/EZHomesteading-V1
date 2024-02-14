@@ -15,9 +15,10 @@ export default function ProfileSettings() {
 
     try {
       const { data } = await deleteUser({
-        variables: { deleteUserUserId2: Auth.getProfile().data._id },
+        variables: { userId: Auth.getProfile().data._id },
       });
       console.log(data.deleteUser);
+      Auth.logout();
     } catch (err) {
       console.error(err);
     }

@@ -4,6 +4,7 @@ import { Menu, Popover, Transition } from "@headlessui/react";
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
+import Auth from "../../utils/auth";
 
 const user = {
   imageUrl: "/images/svg/person-circle.svg",
@@ -13,7 +14,11 @@ const userNavigation = [
   { name: "Your Profile", href: "/profile" },
   { name: "Settings", href: "/profile-settings" },
   { name: "Register", href: "/register" },
-  { name: "Sign Out", href: "/" },
+  {
+    name: "Sign Out",
+    href: "/",
+    onclick: Auth.logout,
+  },
 ];
 
 const cartNavigation = [
@@ -138,6 +143,7 @@ export default function CoOpNavBar() {
                                   active ? "bg-gray-100" : "",
                                   "block px-4 py-2 text-sm text-gray-700"
                                 )}
+                                onClick={item.onclick}
                               >
                                 {item.name}
                               </Link>

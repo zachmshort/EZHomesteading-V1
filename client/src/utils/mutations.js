@@ -112,10 +112,9 @@ export const DELETE_PRODUCT = gql`
   }
 `;
 export const DELETE_USER = gql`
-  mutation Mutation($deleteUserUserId2: ID!) {
-    deleteUser(userId: $deleteUserUserId2) {
+  mutation Mutation($userId: ID!) {
+    deleteUser(userId: $userId) {
       _id
-      username
     }
   }
 `;

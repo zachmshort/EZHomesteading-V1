@@ -78,8 +78,8 @@ const resolvers = {
     //add user
     addUser: async (parent, { username, password, email }) => {
       //need to pass user.username, user.password, and user.email
-      const user = User.create({ username, password, email });
-
+      const user = await User.create({ username, password, email });
+      console.log(user);
       const token = signToken(user);
 
       return { token, user };
@@ -98,6 +98,7 @@ const resolvers = {
       if (!correctPw) {
         throw AuthenticationError;
       }
+
       const token = signToken(user);
       return { token, user };
     },
@@ -106,18 +107,18 @@ const resolvers = {
     updateUser: async (
       parent,
       {
+        userId,
         profilePic,
         username,
         password,
         email,
         address,
         hoursOfOperation,
-        isCoop,
-        isProducer,
+        userType,
       }
     ) => {
       return User.findOneAndUpdate(
-        { username:username },
+        { _id: userId },
         {
           profilePic,
           username,
@@ -125,8 +126,7 @@ const resolvers = {
           email,
           address,
           hoursOfOperation,
-          isCoop,
-          isProducer,
+          userType,
         },
         { new: true }
       );

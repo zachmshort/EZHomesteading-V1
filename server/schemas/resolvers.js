@@ -98,7 +98,6 @@ const resolvers = {
       if (!correctPw) {
         throw AuthenticationError;
       }
-
       const token = signToken(user);
       return { token, user };
     },

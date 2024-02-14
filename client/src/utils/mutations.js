@@ -90,7 +90,6 @@ export const LOGIN = gql`
         profilePic
         transactionHistory
         userProducts
-        userType
         username
       }
     }

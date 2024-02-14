@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
 import CoOpNavBar from "../../components/navbar/CoOpNavBar";
-
 import { useMutation } from "@apollo/client";
 import { useState } from "react";
 import { ADD_USER } from "../../utils/mutations";
-
 import Auth from "../../utils/auth";
 
 const Signup = () => {
@@ -12,6 +10,7 @@ const Signup = () => {
     username: "",
     email: "",
     password: "",
+    userType:"",
   });
   const [addUser, { error, data }] = useMutation(ADD_USER);
 

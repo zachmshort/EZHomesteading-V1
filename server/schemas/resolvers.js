@@ -98,7 +98,6 @@ const resolvers = {
       if (!correctPw) {
         throw AuthenticationError;
       }
-
       const token = signToken(user);
       return { token, user };
     },
@@ -107,18 +106,18 @@ const resolvers = {
     updateUser: async (
       parent,
       {
-        userId,
         profilePic,
         username,
         password,
         email,
         address,
         hoursOfOperation,
-        userType,
+        isCoop,
+        isProducer,
       }
     ) => {
       return User.findOneAndUpdate(
-        { _id: userId },
+        { username:username },
         {
           profilePic,
           username,
@@ -126,7 +125,8 @@ const resolvers = {
           email,
           address,
           hoursOfOperation,
-          userType,
+          isCoop,
+          isProducer,
         },
         { new: true }
       );

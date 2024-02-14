@@ -18,9 +18,9 @@ import ProfileSettings from "./pages/user/ProfileSettings";
 import OrderHistory from "./pages/cart/OrderHistory";
 import ShopEZH from './pages/views/ShopEZH';
 import CoOpStore from './pages/coop/CoOpStore.jsx';
-// import CoOpSettings from './pages/coop/CoOpSettings.jsx';
+import CoOpSettings from './pages/coop/CoOpSettings.jsx';
 import AddProduct from './pages/coop/AddProduct.jsx';
-// import ChooseRole from './pages/loginRegister/ChooseRole'
+import ConsumerToCoOp from './pages/loginRegister/ConsumerToCoOp.jsx'
 
 const router = createBrowserRouter([
   {
@@ -43,10 +43,10 @@ const router = createBrowserRouter([
         path: '/co-op-store',
         element: <CoOpStore />,
       },
-      // {
-      //   path: '/co-op-settings',
-      //   element: <CoOpSettings />,
-      // },
+      {
+        path: '/co-op-settings',
+        element: <CoOpSettings />,
+      },
       {
         path: '/login',
         element: <Login />,
@@ -78,6 +78,10 @@ const router = createBrowserRouter([
       {
         path: '/add-product',
         element: <AddProduct />,
+      },
+      {
+        path: '/become-a-co-op',
+        element: <ConsumerToCoOp />,
       },
       // {
       //   path: '/',

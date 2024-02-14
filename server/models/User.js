@@ -44,7 +44,8 @@ const userSchema = new Schema({
       ref: "item",
     },
   ],
-  userType: { type: String },
+  isCoop: { type: Boolean },
+  isProducer: { type: Boolean}, 
 });
 
 // set up pre-save middleware to create password

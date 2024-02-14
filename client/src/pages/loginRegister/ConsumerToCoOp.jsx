@@ -10,7 +10,7 @@ const ConsumerToCoOp = () => {
         city:"",
         state:"",
         phone:"",
-        userType:"coop",
+        isCoop: 1,
       });
       const [updateUser, { error, data }] = useMutation(UPDATE_USER);
     
@@ -29,7 +29,7 @@ const ConsumerToCoOp = () => {
         console.log(formState);
     
         try {
-          const response = await addUser({
+          const response = await updateUser({
             variables: { ...formState },
           });
     

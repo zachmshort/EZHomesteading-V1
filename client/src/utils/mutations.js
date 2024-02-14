@@ -68,8 +68,9 @@ export const ADD_USER = gql`
         profilePic
         transactionHistory
         userProducts
-        userType
         username
+        isCoop
+        isProducer
       }
     }
   }
@@ -146,29 +147,29 @@ export const UPDATE_ITEM = gql`
 `;
 export const UPDATE_USER = gql`
   mutation Mutation(
-    $userId: ID!
     $profilePic: String!
     $username: String!
     $password: String!
     $email: String!
     $address: String!
     $hoursOfOperation: String!
-    $userType: String!
+    $isCoop: Boolean
+    $isProducer: Boolean
   ) {
     updateUser(
-      userId: $userId
       profilePic: $profilePic
       username: $username
       password: $password
       email: $email
       address: $address
       hoursOfOperation: $hoursOfOperation
-      userType: $userType
+      isCoop: $isCoop
+      isProducer: $isProducer
     ) {
-      _id
       profilePic
       username
-      userType
+      isCoop
+      isProducer
       hoursOfOperation
       email
       address

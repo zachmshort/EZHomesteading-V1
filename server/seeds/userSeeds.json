@@ -11,7 +11,8 @@
     "state": "Australia",
     "hoursOfOperation": "e",
     "transactionHistory": ["id", "id"],
-    "userType": "user",
+    "isCoop": 1,
+    "isProducer": 0,
     "userProducts": [
       "65c6b50daca472f50c555022",
       "65c6b50daca472f50c555023",
@@ -53,7 +54,8 @@
       "65c6b50daca472f50c55502c",
       "65c6b50daca472f50c55502d"
     ],
-    "userType": "user",
+    "isCoop": 1,
+    "isProducer": 0,
     "userProducts": ["id", "id"],
     "cart": [
       "65c6b50daca472f50c555022",

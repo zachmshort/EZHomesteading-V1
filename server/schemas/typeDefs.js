@@ -21,7 +21,8 @@ const typeDefs = `
     hoursOfOperation : String
     cart : [String]
     transactionHistory : [String]
-    userType : String
+    isCoop : Boolean
+    isProducer : Boolean
     phoneNumber: String
     city: String
     state: String
@@ -64,7 +65,7 @@ const typeDefs = `
     deleteProductItem(userId: String!, itemId: String!): User
     addUser(username: String!, password: String!, email: String!): Auth
     login(email: String!, password: String!): Auth
-    updateUser(userId: ID!, profilePic: String!, username: String!, password: String!, email: String!, address: String!, hoursOfOperation: String!, userType: String!): User
+    updateUser( profilePic: String, username: String!, password: String!, email: String!, address: String, hoursOfOperation: String, isCoop: Boolean, isProducer:Boolean): Auth
     deleteUser(userId: ID!): User
     addItem(name: String!, category: String!, subCategory: String!, quantityType: String!, stock: Int!, shelfLife: Int, price: Float!, userId: String!): Item
     updateItem(itemId: String!, name: String!, quantityType: String!, stock: Int!, shelfLife: Int!, price: Float!): Item

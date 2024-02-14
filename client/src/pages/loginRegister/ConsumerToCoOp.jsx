@@ -10,7 +10,7 @@ const ConsumerToCoOp = () => {
         city:"",
         state:"",
         phone:"",
-        userType:"",
+        userType:"coop",
       });
       const [updateUser, { error, data }] = useMutation(UPDATE_USER);
     

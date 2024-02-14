@@ -1,6 +1,6 @@
 import { PhotoIcon } from '@heroicons/react/24/solid'
 
-export default function AddProduct() {
+function AddProduct() {
   return (
     <>
       <div className="flex justify-left items-center mt-2">

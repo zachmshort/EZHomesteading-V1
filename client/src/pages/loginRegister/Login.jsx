@@ -1,101 +1,152 @@
 import { Link } from "react-router-dom";
 import CoOpNavBar from "../../components/navbar/CoOpNavBar";
+import { useMutation } from "@apollo/client";
+import { useState } from "react";
+import { LOGIN } from "../../utils/mutations";
+import Auth from "../../utils/auth";
 
-export default function Login() {
+// get user to form
+// upon entering data (email password)
+// checks if user's email exist & password matches
+
+const login = () => {
+  const [formState, setFormState] = useState({
+    email: "",
+    password: "",
+  });
+
+  const [login, { error, data }] = useMutation(LOGIN);
+
+  const handleInput = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formState);
+
+    try {
+      const response = await login({
+        variables: { ...formState },
+      });
+      console.log(response);
+      Auth.login(response.data.login.token);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
     <>
       <CoOpNavBar />
-      {/*
-        This example requires updating your template:
-
-        ```
-        <html class="h-full bg-gray-50">
-        <body class="h-full">
-        ```
-      */}
       <div className="flex min-h-full flex-1 flex-col justify-center py-12 sm:px-6 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <h2 className="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Sign In
           </h2>
         </div>
-
-        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
+        <div className="mt-3 w-1/4">
           <div className="bg-white px-6 py-12 shadow sm:rounded-lg sm:px-12">
-            <form className="space-y-6" action="#" method="POST">
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium leading-6 text-gray-900"
-                >
-                  Email address
-                </label>
-                <div className="mt-2">
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    autoComplete="email"
-                    required
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label
-                  htmlFor="password"
-                  className="block text-sm font-medium leading-6 text-gray-900"
-                >
-                  Password
-                </label>
-                <div className="mt-2">
-                  <input
-                    id="password"
-                    name="password"
-                    type="password"
-                    autoComplete="current-password"
-                    required
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  />
-                </div>
-              </div>
-
-              <div className="flex items-center justify-between">
-                <div className="flex items-center">
-                  <input
-                    id="remember-me"
-                    name="remember-me"
-                    type="checkbox"
-                    className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                  />
+            {data ? (
+              <p>
+                Success! You may now head{" "}
+                <Link to="/">back to the homepage.</Link>
+              </p>
+            ) : (
+              <form
+                className="space-y-6"
+                action="#"
+                method="POST"
+                onSubmit={handleFormSubmit}
+              >
+                <div>
                   <label
-                    htmlFor="remember-me"
-                    className="ml-3 block text-sm leading-6 text-gray-900"
+                    htmlFor="email"
+                    className="block text-sm font-medium leading-6 text-gray-900"
                   >
-                    Remember me
+                    Email address
                   </label>
+                  <div className="mt-2">
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      autoComplete="email"
+                      required
+                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
+                      value={formState.email}
+                      onChange={handleInput}
+                    />
+                  </div>
                 </div>
 
-                <div className="text-sm leading-6">
-                  <a
-                    href="#"
-                    className="font-semibold text-indigo-600 hover:text-indigo-500"
+                <div>
+                  <label
+                    htmlFor="password"
+                    className="block text-sm font-medium leading-6 text-gray-900"
                   >
-                    Forgot password?
-                  </a>
+                    Password
+                  </label>
+                  <div className="mt-2">
+                    <input
+                      id="password"
+                      name="password"
+                      type="password"
+                      autoComplete="current-password"
+                      required
+                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
+                      value={formState.password}
+                      onChange={handleInput}
+                    />
+                  </div>
                 </div>
-              </div>
 
-              <div>
-                <button
-                  type="submit"
-                  className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >
-                  Sign in
-                </button>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center">
+                    <input
+                      id="remember-me"
+                      name="remember-me"
+                      type="checkbox"
+                      className="h-4 w-4 rounded border-gray-300 text-green-600 focus:ring-green-600"
+                    />
+                    <label
+                      htmlFor="remember-me"
+                      className="ml-3 block text-sm leading-6 text-gray-900"
+                    >
+                      Remember me
+                    </label>
+                  </div>
+
+                  <div className="text-sm leading-6">
+                    <a
+                      href="#"
+                      className="font-semibold text-green-600 hover:text-green-500"
+                    >
+                      Forgot password?
+                    </a>
+                  </div>
+                </div>
+
+                <div>
+                  <button
+                    type="submit"
+                    className="flex w-full justify-center rounded-md bg-green-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
+                  >
+                    Sign in
+                  </button>
+                </div>
+              </form>
+            )}
+
+            {error && (
+              <div className="my-3 p-3 bg-danger text-white">
+                {error.message}
               </div>
-            </form>
+            )}
 
             <div>
               <div className="relative mt-10">
@@ -172,10 +223,10 @@ export default function Login() {
           </div>
 
           <p className="text-center text-sm leading-6 text-gray-500">
-            Don't have an account?
+            Don't have an account?{" "}
             <Link
               to="/register"
-              className="ml-1 font-semibold text-indigo-600 hover:text-indigo-500"
+              className="ml-1 font-semibold text-green-600 hover:text-green-500"
             >
               Register
             </Link>
@@ -184,4 +235,6 @@ export default function Login() {
       </div>
     </>
   );
-}
+};
+
+export default login;

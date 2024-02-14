@@ -62,8 +62,8 @@ const typeDefs = `
     deleteCartItem(userId: String!, itemId: String!): User
     addProductItem(userId: String!, itemId: String!, userProducts: [String]!): User
     deleteProductItem(userId: String!, itemId: String!): User
-    addUser(username: String!, password: String!, email: String!): User
-    login(email: String!, password: String!): User
+    addUser(username: String!, password: String!, email: String!): Auth
+    login(email: String!, password: String!): Auth
     updateUser(userId: ID!, profilePic: String!, username: String!, password: String!, email: String!, address: String!, hoursOfOperation: String!, userType: String!): User
     deleteUser(userId: ID!): User
     addItem(name: String!, category: String!, subCategory: String!, quantityType: String!, stock: Int!, shelfLife: Int, price: Float!, userId: String!): Item

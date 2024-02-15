@@ -17,7 +17,7 @@ EZ Homesteading is a multivendor marketplace application with an emphasis on con
 
 ### Collaborators Roles
 
-All members contributed to the front end and the back end. However, Macguire and Spencer built out the core of the back end whereas Erik and Zach built out the the core of the front end. As the MVP got closer to manifestation, both ends collaborated to put the finishing touches on the project. Zach modified the mutations as the user experience became clearer, Maguire and Spencer then worked with him to link the back end properly. 
+All members contributed to the front end and the back end. However, Maguire and Spencer built out the core of the back end whereas Erik and Zach built out the the core of the front end. As the MVP got closer to manifestation, both ends collaborated to put the finishing touches on the project. Zach modified the mutations as the user experience became clearer, Maguire and Spencer then worked with him to link the back end properly. 
 
 ## Usage 
 #### Link to Deployed Site

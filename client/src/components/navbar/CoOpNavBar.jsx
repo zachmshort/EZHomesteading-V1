@@ -13,7 +13,7 @@ const user = {
 const userNavigation = [
   { name: "Your Profile", href: "/profile" },
   { name: "Settings", href: "/profile-settings" },
-  { name: "Register", href: "/register" },
+  { name: "login", href: "/login" },
   {
     name: "Sign Out",
     href: "/",

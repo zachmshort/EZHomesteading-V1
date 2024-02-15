@@ -1,4 +1,4 @@
-import CoOpNavBar from "../../components/navbar/CoOpNavBar";
+import HomeNavBar from "../../components/navbar/HomeNavBar";
 // import ConsumerNavBar from '../../components/navbar/ConsumerNavBar';
 import React, { useState } from "react";
 import "../../styles/App.css";
@@ -120,7 +120,7 @@ export default function StaticHome() {
   return (
     <div className="bg-white">
       {/* Mobile menu */}
-      <CoOpNavBar />
+      <HomeNavBar />
 
       {/* Hero section */}
       <div className="relative h-screen">
@@ -129,13 +129,13 @@ export default function StaticHome() {
           <div className="absolute inset-0 bg-gray-900 opacity-50" />
           <img
             src="/images/home-images/ezh-home-static-bg.jpg"
-            alt=""
+            alt="Man Holding "
             className="h-full w-full object-cover object-center"
           />
         </div>
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gray-900 opacity-50"
+          className="absolute inset-0 bg-gray-900 opacity-20"
         />
 
         {/* Navigation */}
@@ -148,9 +148,12 @@ export default function StaticHome() {
           </nav>
         </header>
 
-        <div className="relative mx-auto flex max-w-3xl flex-col items-center px-6 py-32 text-center sm:py-64 lg:px-0">
+        <div className="relative mx-auto flex max-w-3xl flex-col items-start px-6 py-32 text-start sm:py-64 lg:px-0">
           <h1 className="text-4xl font-bold tracking-tight text-white lg:text-6xl Fresh">
             Fresh, Local, Organic
+          </h1>
+          <h1 className="text-4xl font-bold mt-1 tracking-tight lg:text-6xl Produce">
+            Produce Made Simple
           </h1>
           <p className="mt-4 text-xl text-white">
             EZ Homesteading connects family scale farmers & gardeners with

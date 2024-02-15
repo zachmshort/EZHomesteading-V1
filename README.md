@@ -21,7 +21,7 @@ All members contributed to the front end and the back end. However, Macguire and
 
 ## Usage 
 #### Link to Deployed Site
-[EZHomesteading.com]()
+[EZHomesteading.com](https://ez-homesteading-mvp-516b3c121538.herokuapp.com/)
 
 #### Info to View Code 
 1. [Go to the homepage](https://github.com/zachmshort/EZHomesteading)

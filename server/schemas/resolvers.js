@@ -79,7 +79,6 @@ const resolvers = {
     addUser: async (parent, { username, password, email }) => {
       //need to pass user.username, user.password, and user.email
       const user = await User.create({ username, password, email });
-      console.log(user);
       const token = signToken(user);
 
       return { token, user };

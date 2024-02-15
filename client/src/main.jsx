@@ -1,30 +1,28 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // import  from './pages/';
 import StaticHome from "./pages/views/StaticHome";
-import App from './App';
-import Profile from './pages/user/Profile';
-import Cart from './pages/cart/Cart';
-import Login from './pages/loginRegister/Login';
-import Register from './pages/loginRegister/Register';
-import CoOpRegister from './pages/coop/CoOpRegister'
-import ProducerRegister from './pages/producer/ProducerRegister';
+import App from "./App";
+import Profile from "./pages/user/Profile";
+import Cart from "./pages/cart/Cart";
+import Login from "./pages/loginRegister/Login";
+import Register from "./pages/loginRegister/Register";
+import CoOpRegister from "./pages/coop/CoOpRegister";
+import ProducerRegister from "./pages/producer/ProducerRegister";
 import ProfileSettings from "./pages/user/ProfileSettings";
 import OrderHistory from "./pages/cart/OrderHistory";
-import ShopEZH from './pages/views/ShopEZH';
-import CoOpStore from './pages/coop/CoOpStore.jsx';
-import CoOpSettings from './pages/coop/CoOpSettings.jsx';
-import AddProduct from './pages/coop/AddProduct.jsx';
-import ConsumerToCoOp from './pages/loginRegister/ConsumerToCoOp.jsx'
+import Cow from "./unused/components/cow";
+import ShopEZH from "./pages/views/ShopEZH";
+import CoOpStore from "./pages/coop/CoOpStore.jsx";
+import CoOpSettings from "./pages/coop/CoOpSettings.jsx";
+import AddProduct from "./pages/coop/AddProduct.jsx";
+import ConsumerToCoOp from "./pages/loginRegister/ConsumerToCoOp.jsx";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <App />,
     children: [
       {
@@ -32,55 +30,59 @@ const router = createBrowserRouter([
         element: <StaticHome />,
       },
       {
-        path: '/profile',
+        path: "/profile",
         element: <Profile />,
       },
       {
-        path: '/cart',
+        path: "/cart",
         element: <Cart />,
       },
       {
-        path: '/co-op-store',
+        path: "/co-op-store",
         element: <CoOpStore />,
       },
       {
-        path: '/co-op-settings',
+        path: "/co-op-settings",
         element: <CoOpSettings />,
       },
       {
-        path: '/login',
+        path: "/login",
         element: <Login />,
       },
       {
-        path: '/register',
+        path: "/register",
         element: <Register />,
       },
       {
-        path: '/co-op-register',
+        path: "/co-op-register",
         element: <CoOpRegister />,
       },
       {
-        path: '/producer-register',
+        path: "/producer-register",
         element: <ProducerRegister />,
       },
       {
-        path: '/profile-settings',
+        path: "/profile-settings",
         element: <ProfileSettings />,
       },
       {
-        path: '/order-history',
+        path: "/order-history",
         element: <OrderHistory />,
       },
       {
-        path: '/shop-ezh',
+        path: "/shop-ezh",
         element: <ShopEZH />,
       },
       {
-        path: '/add-product',
+        path: "/cow",
+        element: <Cow />,
+      },
+      {
+        path: "/add-product",
         element: <AddProduct />,
       },
       {
-        path: '/become-a-co-op',
+        path: "/become-a-co-op",
         element: <ConsumerToCoOp />,
       },
       // {

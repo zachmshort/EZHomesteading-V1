@@ -1,8 +1,9 @@
-import HomeNavBar from "../../components/navbar/HomeNavBar";
+// import HomeNavBar from "../../components/navbar/HomeNavBar";
 // import ConsumerNavBar from '../../components/navbar/ConsumerNavBar';
 import React, { useState } from "react";
 import "../../styles/App.css";
 import { Link } from "react-router-dom";
+import CoOpNavBar from "../../components/navbar/CoOpNavBar";
 
 const categories = [
   {
@@ -120,7 +121,7 @@ export default function StaticHome() {
   return (
     <div className="bg-white">
       {/* Mobile menu */}
-      <HomeNavBar />
+      <CoOpNavBar />
 
       {/* Hero section */}
       <div className="relative h-screen">
@@ -250,12 +251,15 @@ export default function StaticHome() {
                   Grow or source, and then start selling. No monthly subscrition
                   or hidden fees.
                 </p>
+                <button>
                 <Link
                   to="/co-op-register"
                   className="mt-8 block w-full rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium text-gray-900 hover:bg-gray-100 sm:w-auto"
                 >
                   Register as a Co-Op
+                 
                 </Link>
+                </button>
               </div>
             </div>
           </div>

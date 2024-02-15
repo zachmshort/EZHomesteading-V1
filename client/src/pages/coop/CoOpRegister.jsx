@@ -1,44 +1,48 @@
-import {  useState } from "react"; //useEffect,
 import { Link } from "react-router-dom";
 import CoOpNavBar from "../../components/navbar/CoOpNavBar";
-import { ExclamationCircleIcon } from '@heroicons/react/20/solid'
+import { useMutation } from "@apollo/client";
+import { useState } from "react";
+import { ADD_USER } from "../../utils/mutations";
 
-export default function CoOpRegister() {
-  const [emailError, setEmailError] = useState("");
+import Auth from "../../utils/auth";
 
-  const validateEmail = (email) => {
-    const isValid = /\S+@\S+\.\S+/.test(email);
-    return isValid;
-  };
-
-  const handleEmailChange = (event) => {
-    const email = event.target.value;
-    const isValid = validateEmail(email);
-    if (!isValid) {
-      setEmailError("Not a valid email address.");
-    } else {
-      setEmailError("");
-    }
-  };
-
-  //makes register page scrollable on vw smaller than 1600
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     if (window.innerWidth >= 1600) {
-  //       document.body.style.overflow = "hidden";
-  //     } else {
-  //       document.body.style.overflow = "auto";
-  //     }
-  //   };
-
-  //   handleResize();
-
-  //   window.addEventListener("resize", handleResize);
-
-  //   return () => {
-  //     window.removeEventListener("resize", handleResize);
-  //   };
-  // }, []);
+const CoOpRegister = () => {
+    const [formState, setFormState] = useState({
+      username: "",
+      email: "",
+      password: "",
+      isCoop:1,
+      address:"",
+      city:"",
+      state:"",
+      phoneNumber:"",
+    });
+    const [addUser, { error, data }] = useMutation(ADD_USER);
+  
+    const handleChange = (event) => {
+      const { name, value } = event.target;
+  
+      setFormState({
+        ...formState,
+        [name]: value,
+      });
+    };
+  
+    // submit form
+    const handleFormSubmit = async (event) => {
+      event.preventDefault();
+      console.log(formState);
+  
+      try {
+        const response = await addUser({
+          variables: { ...formState },
+        });
+  
+        Auth.login(response.data.addUser.token);
+      } catch (e) {
+        console.error(e);
+      }
+    };
 
   return (
     <>
@@ -46,13 +50,20 @@ export default function CoOpRegister() {
       <div className="flex min-h-screen justify-center ">
         <div className="w-full max-w-md">
           <div className="sm:mx-auto sm:w-full sm:max-w-md">
-            <h2 className="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+            <h2 className="mt-20 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
               Register as a Co-Op
             </h2>
           </div>
           <div className="mt-5 sm:mx-auto sm:w-full sm:max-w-[480px]">
             <div className="bg-white px-6 py-12 shadow sm:rounded-lg sm:px-12">
-              <form className="space-y-6" action="#" method="POST">
+            {data ? (
+                <p>
+                  Success! You may now head{" "}
+                  <Link to="/">back to the homepage.</Link>
+                </p>
+              ) : (
+              <form className="space-y-6" action="#" method="POST"
+              onSubmit={handleFormSubmit} >
                 <div>
                   <label
                     htmlFor="username"
@@ -67,7 +78,10 @@ export default function CoOpRegister() {
                       type="string"
                       placeholder="johnsmith123"
                       required
-                      className="block w-full pl-2 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      className="block w-full pl-2 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6
+                      "
+                      value={formState.username}
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
@@ -83,21 +97,15 @@ export default function CoOpRegister() {
                       type="email"
                       name="email"
                       id="email"
-                      className={`block w-full rounded-md pl-2 border-0 py-1.5 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ${emailError ? 'ring-red-500' : ''}`}
+                      className={`block w-full rounded-md pl-2 border-0 py-1.5 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6`}
                       placeholder="you@example.com"
-                      aria-invalid={emailError ? "true" : "false"}
-                      aria-describedby="email-error"
-                      onChange={handleEmailChange}
+                      value={formState.email}
+                      onChange={handleChange}
                     />
                     <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
-                      {emailError && <ExclamationCircleIcon className="h-5 w-5 text-red-500" aria-hidden="true" />}
+
                     </div>
                   </div>
-                  {emailError && (
-                    <p className="mt-2 text-sm text-red-600" id="email-error">
-                      {emailError}
-                    </p>
-                  )}
                 </div>
                 <div>
                   <label
@@ -114,6 +122,8 @@ export default function CoOpRegister() {
                       autoComplete="current-password"
                       required
                       className="block w-full rounded-md pl-2 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      value={formState.password}
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
@@ -150,6 +160,8 @@ export default function CoOpRegister() {
                       id="phone-number"
                       className="block w-full rounded-md border-0 py-1.5 pl-2 pr-4 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                       placeholder="(555) 987-6543"
+                      value={formState.numberNumber}
+                      onChange={handleChange}
                     />
                     
                   </div>
@@ -170,6 +182,8 @@ export default function CoOpRegister() {
                       autoComplete="current-address"
                       placeholder="Optional"
                       className="block w-full rounded-md border-0 py-1.5 pl-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      value={formState.address}
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
@@ -182,6 +196,8 @@ export default function CoOpRegister() {
                         autoComplete="address-level2"
                         className="block w-full rounded-md pl-2 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         placeholder="City"
+                        value={formState.city}
+                      onChange={handleChange}
                       />
                     </div>
                     <div>
@@ -192,10 +208,12 @@ export default function CoOpRegister() {
                         autoComplete="address-level1"
                         className="block w-full rounded-md pl-2 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         placeholder="State"
+                        value={formState.state}
+                        onChange={handleChange}
                       />
                     </div>
                   </div>
-                {/* <div>
+                <div>
                   <fieldset>
                     <legend className="block text-sm font-medium leading-6 text-gray-900">Card Details (Optional)</legend>
                     <div className="mt-2 -space-y-px rounded-md bg-white shadow-sm">
@@ -272,7 +290,7 @@ export default function CoOpRegister() {
                       </div>
                     </div>
                   </fieldset>
-                </div> */}
+                </div>
                 <div>
                   <button
                     type="submit"
@@ -282,9 +300,16 @@ export default function CoOpRegister() {
                   </button>
                 </div>
               </form>
+              )}
+
+              {error && (
+                <div className="my-3 p-3 bg-danger text-white">
+                  {error.message}
+                </div>
+              )}
             </div>
 
-            <p className="mt-10 text-center text-sm text-gray-500">
+            <p className="mt-10 mb-10 text-center text-sm text-gray-500">
               Already have an account?{" "}
               <Link
                 to="/login"
@@ -299,3 +324,5 @@ export default function CoOpRegister() {
     </>
   );
 }
+
+export default CoOpRegister;

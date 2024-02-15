@@ -13,7 +13,7 @@ const user = {
 const userNavigation = [
   { name: "Your Profile", href: "/profile" },
   { name: "Settings", href: "/profile-settings" },
-  { name: "login", href: "/login" },
+  { name: "Login", href: "/login" },
   {
     name: "Sign Out",
     href: "/",
@@ -40,7 +40,6 @@ function classNames(...classes) {
 export default function CoOpNavBar() {
   return (
     <>
-      {/* When the mobile menu is open, add `overflow-hidden` to the `body` element to prevent double scrollbars */}
       <Popover
         as="header"
         className={({ open }) =>

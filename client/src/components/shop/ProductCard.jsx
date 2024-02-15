@@ -8,7 +8,7 @@ import {
   Button,
 } from "@material-tailwind/react";
 
-export default function ProductCard({ productName, price, description, imageUrl, shelfLife, quantity, quantityType }) {
+export default function ProductCard({ productName, price, description, imageUrl, shelfLife, stock, quantityType }) {
   return (
     
     <Card className="w-full lg:w-96 lg:max-h-96 mb-10 ml-12 lg:ml-3 flex">
@@ -40,23 +40,37 @@ export default function ProductCard({ productName, price, description, imageUrl,
           color="gray"
           className="font-normal opacity-75"
         >
-          Shelf Life: {shelfLife}
+          Shelf Life: {shelfLife} days
         </Typography>
         <Typography
           variant="small"
           color="gray"
           className="font-normal opacity-75"
         >
-          {quantity}{quantityType}
+          {stock} {quantityType} 
         </Typography>
       </CardBody>
-      <CardFooter className="pt-0">
+      <CardFooter className="pt-0 flex space-between">
         <Button
-          ripple={false}
-          fullWidth={true}
+          ripple={true}
+          fullWidth={false}
           className="bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
         >
           Add to Cart
+        </Button>
+        <Button
+          ripple={true}
+          fullWidth={false}
+          className="bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
+        >
+          Buy Now
+        </Button>
+        <Button
+          ripple={true}
+          fullWidth={false}
+          className="bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
+        >
+          Message User
         </Button>
       </CardFooter>
     </Card>

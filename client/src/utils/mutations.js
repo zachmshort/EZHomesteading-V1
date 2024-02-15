@@ -12,7 +12,7 @@ export const ADD_NEW_ITEM = gql`
   mutation Mutation(
     $name: String!
     $category: String!
-    $subCategory: String!
+    $subCategory: String
     $quantityType: String!
     $stock: Int!
     $price: Float!

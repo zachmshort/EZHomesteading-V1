@@ -10,15 +10,12 @@
     "server": "cd server nodemon server.js --ignore client",
     "build": "cd client && npm run build",
     "seed": "node server/seeds/seed.js",
-    "install": "cd server && npm i && cd ../client && npm i",
+    "install": "cd server && npm install && cd ../client && npm install",
     "client": "cd client && npm start",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "devDependencies": {
     "concurrently": "^5.1.0"
-  },
-  "dependencies": {
-    "react-redux": "^9.1.0"
   }
 }

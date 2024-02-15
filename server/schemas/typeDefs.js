@@ -65,7 +65,9 @@ const typeDefs = `
     deleteProductItem(userId: String!, itemId: String!): User
     addUser(username: String!, password: String!, email: String!): Auth
     login(email: String!, password: String!): Auth
-    updateUser( profilePic: String, username: String!, password: String!, email: String!, address: String, hoursOfOperation: String, isCoop: Boolean, isProducer:Boolean): Auth
+
+    updateUser(username: String!, profilePic: String, password: String, email: String, address: String, hoursOfOperation: String, isCoop: Boolean, isProducer:Boolean): User
+
     deleteUser(userId: ID!): User
     addItem(name: String!, category: String!, subCategory: String!, quantityType: String!, stock: Int!, shelfLife: Int, price: Float!, userId: String!): Item
     updateItem(itemId: String!, name: String!, quantityType: String!, stock: Int!, shelfLife: Int!, price: Float!): Item

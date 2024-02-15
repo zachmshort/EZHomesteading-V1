@@ -92,21 +92,22 @@ const footerNavigation = {
     { name: "Non-Consumable", href: "/shop-ezh" },
   ],
   company: [
-    { name: "Who we are", href: "/who-we-are" },
-    { name: "How EZH Works", href: "/" },
-    { name: "Terms & Conditions", href: "/terms-and-conditions" },
-    { name: "Privacy", href: "/privacy-policy" },
+    { name: "Who we are", href: "/profile" },
+    { name: "How EZH Works", href: "/profile" },
+    { name: "Terms & Conditions", href: "/profile" },
+    { name: "Privacy", href: "/profile" },
+    { name: "Don't Click Here", href: "/cow" },
   ],
   account: [
     { name: "Manage Account", href: "/profile-settings" },
-    { name: "Returns & Exchanges", href: "/" },
-    { name: "Redeem a Gift Card", href: "/" },
+    { name: "Returns & Exchanges", href: "/profile" },
+    { name: "Redeem a Gift Card", href: "/profile" },
   ],
   connect: [
-    { name: "Contact Us", href: "/" },
-    { name: "Facebook", href: "/" },
-    { name: "Instagram", href: "/" },
-    { name: "Pinterest", href: "/" },
+    { name: "Contact Us", href: "/profile" },
+    { name: "Facebook", href: "/profile" },
+    { name: "Instagram", href: "/profile" },
+    { name: "Pinterest", href: "/profile" },
   ],
 };
 
@@ -330,7 +331,10 @@ export default function StaticHome() {
                   <ul role="list" className="mt-6 space-y-6">
                     {footerNavigation.company.map((item) => (
                       <li key={item.name} className="text-sm">
-                        <Link to="/" className="text-gray-300 hover:text-white">
+                        <Link
+                          to={item.href}
+                          className="text-gray-300 hover:text-white"
+                        >
                           {item.name}
                         </Link>
                       </li>

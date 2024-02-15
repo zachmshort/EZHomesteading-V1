@@ -1,7 +1,5 @@
-// import HomeNavBar from "../../components/navbar/HomeNavBar";
-// import ConsumerNavBar from '../../components/navbar/ConsumerNavBar';
-import React, { useState } from "react";
 import "../../styles/App.css";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import CoOpNavBar from "../../components/navbar/CoOpNavBar";
 
@@ -128,7 +126,7 @@ export default function StaticHome() {
       <div className="relative h-screen">
         {/* Decorative image and overlay */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute inset-0 bg-gray-900 opacity-50" />
+          <div className="absolute inset-0" />
           <img
             src="/images/home-images/ezh-home-static-bg.jpg"
             alt="Man Holding "
@@ -149,24 +147,25 @@ export default function StaticHome() {
             {/* Secondary navigation */}
           </nav>
         </header>
-
-        <div className="relative mx-auto flex max-w-3xl flex-col items-start px-6 py-32 text-start sm:py-64 lg:px-0">
+      <div className="">
+        <div className="relative ml-40 flex max-w-3xl flex-col items-start px-6 py-32 text-start sm:py-64 lg:px-0">
           <h1 className="text-4xl font-bold tracking-tight text-white lg:text-6xl Fresh">
             Fresh, Local, Organic
           </h1>
           <h1 className="text-4xl font-bold mt-1 tracking-tight lg:text-6xl Produce">
             Produce Made Simple
           </h1>
-          <p className="mt-4 text-xl text-white">
+          <p className="pHome mt-4 text-xl text-white">
             EZ Homesteading connects family scale farmers & gardeners with
             people in their community.
           </p>
           <Link
             to="/shop-ezh"
-            className="mt-8 inline-block rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium text-gray-900 hover:bg-gray-100"
+            className="button-arounder mt-8 inline-block rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium text-gray-900 hover:bg-gray-100"
           >
             Find Produce Near Me
           </Link>
+        </div>
         </div>
       </div>
 

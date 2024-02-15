@@ -93,7 +93,7 @@ export default function ShopByCategory() {
               </div>
             </div>
           </div>
-          <div className="cardsContainer grid grid-cols-3 mt-5 px-10 w-3/4 flex">
+          <div className="cardsContainer grid w-full flex space-between">
             {dataConvenience.map((product) => {
               if (!selectedCategory) {
                 return (

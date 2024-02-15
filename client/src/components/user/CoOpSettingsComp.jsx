@@ -6,7 +6,7 @@ const stats = [
   { id: 3, name: 'Positive Reviews', value: '0' },
 ]
 
-export default function CoOpSettings() {
+export default function CoOpSettingsComp() {
   return (
     <>
     <div className="flex justify-center items-center mt-10">

@@ -11,7 +11,7 @@ import {
 export default function ProductCard({ productName, price, description, imageUrl, shelfLife, stock, quantityType }) {
   return (
     
-    <Card className="w-full lg:w-96 lg:max-h-96 mb-10 ml-12 lg:ml-3 flex">
+    <Card className="w-7/8 mb-2.5 mx-2 flex lg:w-96 md:w-82 sm:w-70">
       <CardHeader shadow={false} floated={false} className="h-48 lg:h-48">
         <img
           src={imageUrl}
@@ -50,7 +50,7 @@ export default function ProductCard({ productName, price, description, imageUrl,
           {stock} {quantityType} 
         </Typography>
       </CardBody>
-      <CardFooter className="pt-0 flex space-between">
+      <CardFooter className=" flex space-center">
         <Button
           ripple={true}
           fullWidth={false}

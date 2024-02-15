@@ -1,4 +1,4 @@
-import DropDownButtons from '../../components/shop/DropDownButtons';
+// import DropDownButtons from '../../components/shop/DropDownButtons';
 import CoOpNavBar from '../../components/navbar/CoOpNavBar';
 // import { useQuery } from "@apollo/client";
 // import { QUERY_USER } from "../../utils/queries";
@@ -44,7 +44,7 @@ return (
     <>
         <CoOpNavBar />
         <ShopByCategory />
-        <DropDownButtons />
+        {/* <DropDownButtons /> */}
         
         <div>
             {/* {dataConvenience.map((user) => {

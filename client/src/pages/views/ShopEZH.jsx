@@ -1,6 +1,6 @@
 import React from "react";
 import CoOpNavBar from '../../components/navbar/CoOpNavBar';
-import DropDownButtons from "../../components/shop/DropDownButtons";
+// import DropDownButtons from "../../components/shop/DropDownButtons";
 import ShopByCategory from "../../components/shop/ShopByCategory";
 
 export default function ShopEZH() {
@@ -8,7 +8,7 @@ export default function ShopEZH() {
     <>
       <CoOpNavBar />
       <ShopByCategory />
-      <DropDownButtons />
+      {/* <DropDownButtons /> */}
     </>
   );
 }

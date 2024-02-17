@@ -1,0 +1,21 @@
+{
+  "name": "ezhomesteading-v2",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "webpack-dev-server",
+    "start:dev": "concurrently \"cd server && npm run start\" \"cd client && npm run dev\"",
+    "start": "node server/server.js",
+    "server": "cd server nodemon server.js --ignore client",
+    "build": "cd client && npm run build",
+    "seed": "node server/seeds/seed.js",
+    "install": "cd server && npm install && cd ../client && npm install",
+    "client": "cd client && npm start",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0"
+  }
+}

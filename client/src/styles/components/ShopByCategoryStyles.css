@@ -1,0 +1,26 @@
+@media screen and (max-width: 650px) {
+    .cardsContainer {
+        max-width: 400px;
+        grid-template-columns: repeat(1, 1fr); 
+        justify-content: center;
+        align-items: center;
+    }
+}
+  
+@media screen and (min-width: 651px) and (max-width: 1239px) {
+    .cardsContainer {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+  
+@media screen and (min-width: 1240px) and (max-width: 1539px) {
+    .cardsContainer {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+  }
+
+@media screen and (min-width: 1540px) {
+    .cardsContainer {
+        grid-template-columns: repeat(4, 1fr); 
+    }
+  }

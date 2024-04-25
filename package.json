@@ -1,18 +1,21 @@
 {
-  "name": "ezhomesteading",
+  "name": "ezhomesteading-v2",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "webpack-dev-server",
+    "start:dev": "concurrently \"cd server && npm run start\" \"cd client && npm run dev\"",
+    "start": "node server/server.js",
+    "server": "cd server nodemon server.js --ignore client",
+    "build": "cd client && npm run build",
+    "seed": "node server/seeds/seed.js",
+    "install": "cd server && npm install && cd ../client && npm install",
+    "client": "cd client && npm start",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
-  "dependencies": {
-    "vue": "^3.2.45"
-  },
   "devDependencies": {
-    "concurrently": "^5.1.0",
-    "@vitejs/plugin-vue": "^4.0.0"
+    "concurrently": "^5.1.0"
   }
 }

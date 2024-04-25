@@ -85,13 +85,6 @@ const router = createBrowserRouter([
         path: "/become-a-co-op",
         element: <ConsumerToCoOp />,
       },
-<<<<<<< HEAD
-      {
-        path: "/drop",
-        element: <DropDownButtons />,
-      },
-=======
->>>>>>> db30934b6c178a038350a5bd3f1e902c8961ba68
       // {
       //   path: '/',
       //   element: < />,

@@ -18,7 +18,6 @@ import ShopEZH from "./pages/views/ShopEZH";
 import CoOpStore from "./pages/coop/CoOpStore.jsx";
 import CoOpSettings from "./pages/coop/CoOpSettings.jsx";
 import AddProduct from "./pages/coop/AddProduct.jsx";
-import DropDownButtons from "./components/shop/DropDownButtons.jsx";
 import ConsumerToCoOp from "./pages/loginRegister/ConsumerToCoOp.jsx";
 
 const router = createBrowserRouter([
@@ -86,10 +85,13 @@ const router = createBrowserRouter([
         path: "/become-a-co-op",
         element: <ConsumerToCoOp />,
       },
+<<<<<<< HEAD
       {
         path: "/drop",
         element: <DropDownButtons />,
       },
+=======
+>>>>>>> db30934b6c178a038350a5bd3f1e902c8961ba68
       // {
       //   path: '/',
       //   element: < />,

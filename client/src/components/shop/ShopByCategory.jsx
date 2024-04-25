@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import "../../styles/components/ShopByCategoryStyles.css";
 import { useQuery } from "@apollo/client";
 import { QUERY_ITEMS } from "../../utils/queries";
-
+//
 export default function ShopByCategory() {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [dataConvenience, setDataConvenience] = useState([]);
